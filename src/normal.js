@@ -1,6 +1,8 @@
 export default function(mu, sigma) {
-  if (mu == null) mu = 0;
-  if (sigma == null) sigma = 1;
+  var n = arguments.length;
+  if (!n) mu = 0, sigma = 1;
+  else if (n === 1) mu = +mu, sigma = 1;
+  else mu = +mu, sigma = +sigma;
   return function() {
     var x, y, r;
     do {

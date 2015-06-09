@@ -1,7 +1,7 @@
 import normal from "./normal";
 
-export default function(mu, sigma) {
-  var randomNormal = normal(mu, sigma);
+export default function() {
+  var randomNormal = normal.apply(this, arguments);
   return function() {
     return Math.exp(randomNormal());
   };
