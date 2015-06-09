@@ -15,7 +15,7 @@ uniform(6)(); // Returns a number greater than or equal to 0 and less than 6.
 uniform(1, 5)(); // Returns a number greater than or equal to 1 and less than 5.
 ```
 
-Note that you can also use the built-in [Math.random](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math/random) to generate uniform distributions directly. For example, to generate a random integer between 0 and 99 (inclusive), you can say `Math.floor(Math.random() * 100)`.  Or even shorter: `Math.random() * 100 | 0`.
+Note that you can also use the built-in [Math.random](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math/random) to generate uniform distributions directly. For example, to generate a random integer between 0 and 99 (inclusive), you can say `Math.random() * 100 | 0`.
 
 <a name="normal" href="#normal">#</a> <b>normal</b>([<i>mu</i>][, <i>sigma</i>])
 
