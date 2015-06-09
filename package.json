@@ -25,6 +25,7 @@
     "prepublish": "npm run test && uglifyjs build/random.js -c -m -o build/random.min.js"
   },
   "devDependencies": {
+    "d3-arrays": "~0.0.3",
     "d3-bundler": "~0.2.6",
     "faucet": "0.0",
     "seedrandom": "2",
