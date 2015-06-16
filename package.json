@@ -1,6 +1,6 @@
 {
   "name": "d3-random",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate random numbers from various distributions.",
   "keywords": [
     "d3",
@@ -22,7 +22,7 @@
   "scripts": {
     "pretest": "mkdir -p build && d3-bundler --format=umd --name=random -- index.js > build/random.js",
     "test": "faucet `find test -name '*-test.js'`",
-    "prepublish": "npm run test && uglifyjs build/random.js -c -m -o build/random.min.js"
+    "prepublish": "npm run test && uglifyjs build/random.js -c -m -o build/random.min.js && rm -f build/random.zip && zip -j build/random.zip -- LICENSE README.md build/random.js build/random.min.js"
   },
   "devDependencies": {
     "d3-arrays": "~0.0.3",
