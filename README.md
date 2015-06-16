@@ -2,9 +2,11 @@
 
 Generate random numbers from various distributions.
 
-Changes from D3 3.x:
+## Installing
 
-* Added a [uniform](#uniform) random number generator.
+If you use NPM, `npm install d3-random`. Otherwise, download the [latest release](https://github.com/d3/d3-random/releases/latest).
+
+## API Reference
 
 <a name="uniform" href="#uniform">#</a> <b>uniform</b>([<i>min</i>, ][<i>max</i>])
 
@@ -32,3 +34,7 @@ Returns a function for generating random numbers with a [Bates distribution](htt
 <a name="irwinHall" href="#irwinHall">#</a> <b>irwinHall</b>(<i>n</i>)
 
 Returns a function for generating random numbers with an [Irwin–Hall distribution](https://en.wikipedia.org/wiki/Irwin–Hall_distribution) with *n* independent variables.
+
+## Changes from D3 3.x:
+
+* Added a [uniform](#uniform) random number generator.
