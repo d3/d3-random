@@ -1,6 +1,6 @@
 {
   "name": "d3-random",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generate random numbers from various distributions.",
   "keywords": [
     "d3",
@@ -13,20 +13,20 @@
     "name": "Mike Bostock",
     "url": "http://bost.ocks.org/mike"
   },
-  "main": "build/random",
+  "main": "build/random.cjs",
   "jsnext:main": "index",
   "repository": {
     "type": "git",
     "url": "https://github.com/d3/d3-random.git"
   },
   "scripts": {
-    "pretest": "mkdir -p build && d3-bundler --format=umd --name=random -- index.js > build/random.js",
+    "pretest": "mkdir -p build && d3-bundler -x -f cjs -o build/random.cjs.js",
     "test": "faucet `find test -name '*-test.js'`",
-    "prepublish": "npm run test && uglifyjs build/random.js -c -m -o build/random.min.js && rm -f build/random.zip && zip -j build/random.zip -- LICENSE README.md build/random.js build/random.min.js"
+    "prepublish": "npm run test && d3-bundler -n random -o build/random.js && uglifyjs build/random.js -c -m -o build/random.min.js && rm -f build/random.zip && zip -j build/random.zip -- LICENSE README.md build/random.js build/random.min.js"
   },
   "devDependencies": {
-    "d3-arrays": "~0.0.3",
-    "d3-bundler": "~0.2.6",
+    "d3-arrays": "~0.1.2",
+    "d3-bundler": "~0.4.0",
     "faucet": "0.0",
     "seedrandom": "2",
     "tape": "4",
