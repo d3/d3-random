@@ -1,6 +1,6 @@
 {
   "name": "d3-random",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Generate random numbers from various distributions.",
   "keywords": [
     "d3",
@@ -13,21 +13,21 @@
     "name": "Mike Bostock",
     "url": "http://bost.ocks.org/mike"
   },
-  "main": "build/random.cjs",
+  "main": "build/d3-random.js",
   "jsnext:main": "index",
   "repository": {
     "type": "git",
     "url": "https://github.com/d3/d3-random.git"
   },
   "scripts": {
-    "pretest": "mkdir -p build && d3-bundler -x -f cjs -o build/random.cjs.js",
+    "pretest": "mkdir -p build && node -e 'process.stdout.write(\"var version = \\\"\" + require(\"./package.json\").version + \"\\\"; export * from \\\"../index\\\"; export {version};\");' > build/bundle.js && rollup -f umd -u d3-random -n d3_random -o build/d3-random.js -- build/bundle.js",
     "test": "faucet `find test -name '*-test.js'`",
-    "prepublish": "npm run test && d3-bundler -n random -o build/random.js && uglifyjs build/random.js -c -m -o build/random.min.js && rm -f build/random.zip && zip -j build/random.zip -- LICENSE README.md build/random.js build/random.min.js"
+    "prepublish": "npm run test && uglifyjs build/d3-random.js -c -m -o build/d3-random.min.js && rm -f build/d3-random.zip && zip -j build/d3-random.zip -- LICENSE README.md build/d3-random.js build/d3-random.min.js"
   },
   "devDependencies": {
-    "d3-arrays": "~0.1.2",
-    "d3-bundler": "~0.4.0",
+    "d3-arrays": "~0.3.1",
     "faucet": "0.0",
+    "rollup": "0.20.5",
     "seedrandom": "2",
     "tape": "4",
     "uglify-js": "2"
