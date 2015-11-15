@@ -7,7 +7,7 @@ require("./inDelta");
 
 var mathRandom = Math.random;
 
-tape.test("poisson(n) returns random intervals with a Poisson process of mean n", function(test) {
+tape.test("poisson(n) returns random intervals of a Poisson process with mean interval n", function(test) {
   Math.seedrandom("d5cb594f444fc692");
 
   // average interval (e.g. 20 minutes)
