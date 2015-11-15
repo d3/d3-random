@@ -35,6 +35,11 @@ Returns a function for generating random numbers with a [Bates distribution](htt
 
 Returns a function for generating random numbers with an [Irwin–Hall distribution](https://en.wikipedia.org/wiki/Irwin–Hall_distribution) with *n* independent variables.
 
+<a name="poisson" href="#poisson">#</a> <b>poisson</b>(<i>lambda</i>)
+
+Returns a function for generating random intervals between events with a [Poisson distribution](https://en.wikipedia.org/wiki/Irwin–Hall_distribution) with a mean interval of *lambda*.
+
+
 ## Changes from D3 3.x:
 
 * Added a [uniform](#uniform) random number generator.
