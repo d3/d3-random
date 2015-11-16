@@ -37,10 +37,10 @@ Returns a function for generating random numbers with an [Irwin–Hall distribut
 
 <a name="exponential" href="#exponential">#</a> <b>exponential</b>(<i>lambda</i>)
 
-Returns a function for generating random numbers with an [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) with a mean of `1/lambda`. Equivalent of intervals in a [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process).
-
-Example: `exponential(1/40)` will generate random times for a Poisson random event that occurs an average of once every 40 units of time.
+Returns a function for generating random numbers with an [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) with the rate *lambda*; equivalent to time between events in a [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process) with a mean of 1 / *lambda*. For example, exponential(1/40) generates random times between events where, on average, one event occurs every 40 units of time.
 
 ## Changes from D3 3.x:
 
 * Added a [uniform](#uniform) random number generator.
+
+* Added an [exponential](#exponential) random number generator.
