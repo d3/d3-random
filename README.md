@@ -35,10 +35,11 @@ Returns a function for generating random numbers with a [Bates distribution](htt
 
 Returns a function for generating random numbers with an [Irwin–Hall distribution](https://en.wikipedia.org/wiki/Irwin–Hall_distribution) with *n* independent variables.
 
-<a name="poisson" href="#poisson">#</a> <b>poisson</b>(<i>lambda</i>)
+<a name="exponential" href="#exponential">#</a> <b>exponential</b>(<i>lambda</i>)
 
-Returns a function for generating random intervals between events with a [Poisson distribution](https://en.wikipedia.org/wiki/Irwin–Hall_distribution) with a mean interval of *lambda*.
+Returns a function for generating random numbers with an [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) with a mean of `1/lambda`. Equivalent of intervals in a [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process).
 
+Example: `exponential(1/40)` will generate random times for a Poisson random event that occurs an average of once every 40 units of time.
 
 ## Changes from D3 3.x:
 
