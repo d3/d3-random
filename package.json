@@ -1,6 +1,6 @@
 {
   "name": "d3-random",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Generate random numbers from various distributions.",
   "keywords": [
     "d3",
@@ -25,7 +25,7 @@
     "prepublish": "npm run test && uglifyjs build/d3-random.js -c -m -o build/d3-random.min.js && rm -f build/d3-random.zip && zip -j build/d3-random.zip -- LICENSE README.md build/d3-random.js build/d3-random.min.js"
   },
   "devDependencies": {
-    "d3-array": "~0.6.1",
+    "d3-array": "~0.7.0",
     "faucet": "0.0",
     "rollup": "0.20.5",
     "seedrandom": "2",

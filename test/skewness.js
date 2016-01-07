@@ -1,15 +1,15 @@
-var arrays = require("d3-arrays");
+var array = require("d3-array");
 
-module.exports = function(array) {
-  var mean = arrays.mean(array),
+module.exports = function(numbers) {
+  var mean = array.mean(numbers),
       sum3 = 0,
       sum2 = 0,
       v,
       i = -1,
-      n = array.length;
+      n = numbers.length;
 
   while (++i < n) {
-    v = array[i] - mean;
+    v = numbers[i] - mean;
     sum2 += v * v;
     sum3 += v * v * v;
   }
