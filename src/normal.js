@@ -1,8 +1,7 @@
 export default function(mu, sigma) {
-  var n = arguments.length, x, r;
-  if (!n) mu = 0, sigma = 1;
-  else if (n === 1) mu = +mu, sigma = 1;
-  else mu = +mu, sigma = +sigma;
+  var x, r;
+  mu = mu == null ? 0 : +mu;
+  sigma = sigma == null ? 1 : +sigma;
   return function() {
     var y;
 

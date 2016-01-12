@@ -1,8 +1,8 @@
 export default function(min, max) {
-  var n = arguments.length;
-  if (!n) min = 0, max = 1;
-  else if (n === 1) max = +min, min = 0;
-  else min = +min, max = +max - min;
+  min = min == null ? 0 : +min;
+  max = max == null ? 1 : +max;
+  if (arguments.length === 1) max = min, min = 0;
+  else max -= min;
   return function() {
     return Math.random() * max + min;
   };
