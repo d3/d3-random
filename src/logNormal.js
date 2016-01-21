@@ -5,4 +5,4 @@ export default function() {
   return function() {
     return Math.exp(randomNormal());
   };
-};
+}

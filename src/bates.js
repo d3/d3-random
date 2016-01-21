@@ -5,4 +5,4 @@ export default function(n) {
   return function() {
     return randomIrwinHall() / n;
   };
-};
+}

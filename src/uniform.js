@@ -6,4 +6,4 @@ export default function(min, max) {
   return function() {
     return Math.random() * max + min;
   };
-};
+}

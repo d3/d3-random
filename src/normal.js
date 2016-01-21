@@ -17,4 +17,4 @@ export default function(mu, sigma) {
 
     return mu + sigma * y * Math.sqrt(-2 * Math.log(r) / r);
   };
-};
+}

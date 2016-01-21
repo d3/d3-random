@@ -3,4 +3,4 @@ export default function(n) {
     for (var sum = 0, i = 0; i < n; ++i) sum += Math.random();
     return sum;
   };
-};
+}
