@@ -3,3 +3,6 @@
 build/
 node_modules
 npm-debug.log
+.idea
+.idea/watcherTasks.xml
+.gitignore
