@@ -50,6 +50,6 @@ Returns a function for generating random numbers with an [Irwin–Hall distribut
 
 Returns a function for generating random numbers with an [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) with the rate *lambda*; equivalent to time between events in a [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process) with a mean of 1 / *lambda*. For example, exponential(1/40) generates random times between events where, on average, one event occurs every 40 units of time.
 
-<a name="randomBinomial" href="#randomBinomial">#</a> d3.<b>randomBinomial</b>(<i>n</i>)
+<a name="randomBinomial" href="#randomBinomial">#</a> d3.<b>randomBinomial</b>(<i>n</i>, <i>p</i>)
 
 Returns a function for generating random numbers with a [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with *n* the number of trials and *p* the proability of success in each trial.
