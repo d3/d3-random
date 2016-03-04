@@ -1,7 +1,13 @@
 export default function(n, p)
 {
+	if (arguments.length != 2) {
+		throw new SyntaxError("binomial(number, probability) must be called with only the number and probability parameters.");
+	}
+	if(n < 0) {
+		throw new SyntaxError("binomial(number, probability) should be called with number >= 0.");
+	}
 	if(p <= 0 || p > 1) {
-		throw "p should be between 0 and 1"
+		throw new SyntaxError("binomial(number, probability) should be called with 0 < probability <= 1.");
 	}
 	let x = 0;
 
