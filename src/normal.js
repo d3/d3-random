@@ -1,7 +1,4 @@
 export default function(mu, sigma) {
-  if (arguments.length != 2) {
-    throw new SyntaxError("normal(mu, sigma) must be called with both the mu and sigma parameters.");
-  }
   var x, r;
   mu = mu == null ? 0 : +mu;
   sigma = sigma == null ? 1 : +sigma;
