@@ -52,4 +52,4 @@ Returns a function for generating random numbers with an [exponential distributi
 
 <a name="randomBinomial" href="#randomBinomial">#</a> d3.<b>randomBinomial</b>(<i>n</i>, <i>p</i>)
 
-Returns a function for generating random numbers with a [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with *n* the number of trials and *p* the proability of success in each trial.
+Returns a function for generating random numbers with a [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with *n* the number of trials and *p* the probability of success in each trial.
