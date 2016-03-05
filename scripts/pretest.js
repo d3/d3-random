@@ -1,0 +1,1 @@
+process.stdout.write("export var version = \"" + require("../package.json").version + "\";\n");
