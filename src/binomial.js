@@ -6,8 +6,8 @@ export default function(n, p)
 	if(n < 0) {
 		throw new SyntaxError("binomial(number, probability) should be called with number >= 0.");
 	}
-	if(p <= 0 || p > 1) {
-		throw new SyntaxError("binomial(number, probability) should be called with 0 < probability <= 1.");
+	if(p < 0 || p > 1) {
+		throw new SyntaxError("binomial(number, probability) should be called with 0 <= probability <= 1.");
 	}
 	return function () {
 		let x = 0;
