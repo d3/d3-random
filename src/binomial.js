@@ -9,10 +9,14 @@ export default function(n, p)
 	if(p <= 0 || p > 1) {
 		throw new SyntaxError("binomial(number, probability) should be called with 0 < probability <= 1.");
 	}
-	let x = 0;
+	return function () {
+		let x = 0;
 
-	for(let i = 0; i < n; i++) {
-		if(Math.random() < p) x++;
+		for(let i = 0; i < n; i++) {
+			if(Math.random() < p) {
+				x++;
+			}
+		}
+		return x;
 	}
-	return x;
 }
