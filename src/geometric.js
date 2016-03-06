@@ -6,6 +6,6 @@ export default function(p) {
 		throw new SyntaxError("geometric(probability) should be called with 0 < probability <= 1.");
 	}
 	return function() {
-		return Math.floor(Math.log(Math.random()) / Math.log(1 - p));
+		return 1 + Math.floor(Math.log(Math.random()) / Math.log(1 - p));
 	}
 }
