@@ -53,3 +53,11 @@ Returns a function for generating random numbers with an [exponential distributi
 <a name="randomBernoulli" href="#randomBernoulli">#</a> d3.<b>randomBernoulli</b>(<i>p</i>)
 
 Returns a function for generating either 1 or 0 according to a [Bernoulli distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with 1 being returned with success probability *p* and 0 with failure probability *q* = 1 - *p*.
+
+<a name="randomGeometric" href="#randomGeometric">#</a> d3.<b>randomGeometric</b>(<i>p</i>)
+
+Returns a function for generating numbers with a [Geometric distribution](https://en.wikipedia.org/wiki/Geometric_distribution) with success probability *p*.
+
+<a name="randomBinomial" href="#randomBinomial">#</a> d3.<b>randomBinomial</b>(<i>n</i>, <i>p</i>)
+
+Returns a function for generating random numbers with a [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with *n* the number of trials and *p* the probability of success in each trial.
