@@ -53,3 +53,7 @@ Returns a function for generating random numbers with an [exponential distributi
 <a name="randomGeometric" href="#randomGeometric">#</a> d3.<b>randomGeometric</b>(<i>p</i>)
 
 Returns a function for generating numbers with a [Geometric distribution](https://en.wikipedia.org/wiki/Geometric_distribution) with success probability *p*.
+
+<a name="randomBinomial" href="#randomBinomial">#</a> d3.<b>randomBinomial</b>(<i>n</i>, <i>p</i>)
+
+Returns a function for generating random numbers with a [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with *n* the number of trials and *p* the probability of success in each trial.

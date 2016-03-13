@@ -6,3 +6,4 @@ export {default as randomBates} from "./src/bates";
 export {default as randomIrwinHall} from "./src/irwinHall";
 export {default as randomExponential} from "./src/exponential";
 export {default as randomGeometric} from "./src/geometric";
+export {default as randomBinomial} from "./src/binomial";
