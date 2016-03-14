@@ -13,6 +13,7 @@ var mathRandom = Math.random;
 var mean = function(p) { return p};
 var variance = function(p) { return p * (1 - p)};
 var skew = function(p) { return (1 - 2 * p) / Math.sqrt(variance(p))};
+var kurt = function(p) { return (6 * Math.pow(p, 2) - 6 * p + 1) / variance(p)};
 
 tape.test("randomBernoulli(p) returns random bernoulli distributed numbers with a mean of p", function(test) {
 	Math.seedrandom("d5cb594f444fc692");
@@ -36,6 +37,12 @@ tape.test("randomBernoulli(p) returns random bernoulli distributed numbers with 
 	Math.seedrandom("bb0bb470f346ff65");
 	test.inDelta(skewness(array.range(10000).map(random.randomBernoulli(.5))), skew(.5), 0.05);
 	test.inDelta(skewness(array.range(10000).map(random.randomBernoulli(.25))), skew(.25), 0.05);
+	test.end();
+});
+
+tape.test("randomBernoulli(p) returns random bernoulli distributed numbers with a kurtosis excess of (6 * p^2 - 6 * p - 1) / (p * (1 - p)).", function(test) {
+	Math.seedrandom("qp2tshebh4wej4gi");
+	test.inDelta(skewness(array.range(10000).map(random.randomBernoulli(.15))), kurt(.15), kurt(.15) * 0.05);
 	test.end();
 });
 
