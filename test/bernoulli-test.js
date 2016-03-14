@@ -41,8 +41,11 @@ tape.test("randomBernoulli(p) returns random bernoulli distributed numbers with 
 });
 
 tape.test("randomBernoulli(p) returns random bernoulli distributed numbers with a kurtosis excess of (6 * p^2 - 6 * p - 1) / (p * (1 - p)).", function(test) {
-	Math.seedrandom("qp2tshebh4wej4gi");
-	test.inDelta(skewness(array.range(10000).map(random.randomBernoulli(.15))), kurt(.15), kurt(.15) * 0.05);
+	Math.seedrandom("e6roo8u1129lg5lx");
+	test.inDelta(kurtosis(array.range(10000).map(random.randomBernoulli(.05))), kurt(.05), kurt(.05) * 0.1);
+	test.inDelta(kurtosis(array.range(10000).map(random.randomBernoulli(.10))), kurt(.10), kurt(.10) * 0.1);
+	test.inDelta(kurtosis(array.range(10000).map(random.randomBernoulli(.15))), kurt(.15), kurt(.15) * 0.1);
+	test.inDelta(kurtosis(array.range(10000).map(random.randomBernoulli(.20))), kurt(.20), kurt(.20) * 0.1);
 	test.end();
 });
 
