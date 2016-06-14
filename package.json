@@ -4,6 +4,7 @@
   "description": "Generate random numbers from various distributions.",
   "keywords": [
     "d3",
+    "d3-module",
     "random",
     "rng"
   ],
