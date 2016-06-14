@@ -24,13 +24,13 @@
     "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -n d3 -o build/d3-random.js -- index.js",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
     "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-random.js -c -m -o build/d3-random.min.js",
-    "postpublish": "VERSION=`node -e 'console.log(require(\"./package.json\").version)'`; git push && git push --tags && cp build/d3-random.js ../d3.github.com/d3-random.v0.3.js && cp build/d3-random.min.js ../d3.github.com/d3-random.v0.3.min.js && cd ../d3.github.com && git add d3-random.v0.3.js d3-random.v0.3.min.js && git commit -m \"d3-random ${VERSION}\" && git push && cd - && zip -j build/d3-random.zip -- LICENSE README.md build/d3-random.js build/d3-random.min.js"
+    "postpublish": "VERSION=`node -e 'console.log(require(\"./package.json\").version)'`; git push && git push --tags && cp build/d3-random.js ../d3.github.com/d3-random.v1.js && cp build/d3-random.min.js ../d3.github.com/d3-random.v1.min.js && cd ../d3.github.com && git add d3-random.v1.js d3-random.v1.min.js && git commit -m \"d3-random ${VERSION}\" && git push && cd - && zip -j build/d3-random.zip -- LICENSE README.md build/d3-random.js build/d3-random.min.js"
   },
   "devDependencies": {
-    "d3-array": "~0.8.0",
+    "d3-array": "1",
     "eslint": "2",
     "package-preamble": "0.0",
-    "rollup": "0.27",
+    "rollup": "0.31",
     "seedrandom": "2",
     "tape": "4",
     "uglify-js": "2"
