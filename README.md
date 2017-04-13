@@ -15,7 +15,7 @@ var random = d3.randomUniform(1, 10);
 </script>
 ```
 
-[Try d3-random in your browser.](https://tonicdev.com/npm/d3-random)
+[Try d3-random in your browser.](https://runkit.com/npm/d3-random)
 
 ## API Reference
 
