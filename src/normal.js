@@ -1,7 +1,8 @@
-export default function(mu, sigma) {
+export default function(mu, sigma, random) {
   var x, r;
   mu = mu == null ? 0 : +mu;
   sigma = sigma == null ? 1 : +sigma;
+  random = random == null ? Math.random : random;
   return function() {
     var y;
 
@@ -10,8 +11,8 @@ export default function(mu, sigma) {
 
     // Otherwise, generate a new x and y.
     else do {
-      x = Math.random() * 2 - 1;
-      y = Math.random() * 2 - 1;
+      x = random() * 2 - 1;
+      y = random() * 2 - 1;
       r = x * x + y * y;
     } while (!r || r > 1);
 
