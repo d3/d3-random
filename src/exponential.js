@@ -1,7 +1,11 @@
-export default function(random) {
-  return function(lambda) {
+export default (function sourceRandomExponential(source) {
+  function randomExponential(lambda) {
     return function() {
-      return -Math.log(1 - random()) / lambda;
+      return -Math.log(1 - source()) / lambda;
     };
-  };
-}
+  }
+
+  randomExponential.source = sourceRandomExponential
+
+  return randomExponential;
+})(Math.random)

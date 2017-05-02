@@ -1,10 +1,14 @@
 import normal from "./normal";
 
-export default function(random) {
-  return function() {
-    var randomNormal = normal(random).apply(this, arguments);
+export default (function sourceRandomLogNormal(source) {
+  function randomLogNormal() {
+    var randomNormal = normal.source(source).apply(this, arguments);
     return function() {
       return Math.exp(randomNormal());
     };
-  };
-}
+  }
+
+  randomLogNormal.source = sourceRandomLogNormal;
+
+  return randomLogNormal;
+})(Math.random)
