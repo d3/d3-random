@@ -1,8 +1,10 @@
 import normal from "./normal";
 
-export default function() {
-  var randomNormal = normal.apply(this, arguments);
+export default function(random) {
   return function() {
-    return Math.exp(randomNormal());
+    var randomNormal = normal(random).apply(this, arguments);
+    return function() {
+      return Math.exp(randomNormal());
+    };
   };
 }

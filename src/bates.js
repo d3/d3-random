@@ -1,8 +1,10 @@
 import irwinHall from "./irwinHall";
 
-export default function(n, random) {
-  var randomIrwinHall = irwinHall(n, random);
-  return function() {
-    return randomIrwinHall() / n;
+export default function(random) {
+  return function(n) {
+    var randomIrwinHall = irwinHall(random)(n);
+    return function() {
+      return randomIrwinHall() / n;
+    };
   };
 }
