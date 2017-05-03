@@ -6,3 +6,4 @@ extends:
 
 rules:
     no-cond-assign: 0
+    semi: 2

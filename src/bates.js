@@ -11,4 +11,4 @@ export default (function sourceRandomBates(source) {
   randomBates.source = sourceRandomBates;
 
   return randomBates;
-})(Math.random)
+})(Math.random);

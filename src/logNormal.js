@@ -11,4 +11,4 @@ export default (function sourceRandomLogNormal(source) {
   randomLogNormal.source = sourceRandomLogNormal;
 
   return randomLogNormal;
-})(Math.random)
+})(Math.random);

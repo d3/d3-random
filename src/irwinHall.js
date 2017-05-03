@@ -6,7 +6,7 @@ export default (function sourceRandomIrwinHall(source) {
     };
   }
 
-  randomIrwinHall.source = sourceRandomIrwinHall
+  randomIrwinHall.source = sourceRandomIrwinHall;
 
   return randomIrwinHall;
-})(Math.random)
+})(Math.random);
