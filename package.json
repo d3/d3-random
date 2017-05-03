@@ -30,7 +30,7 @@
   "devDependencies": {
     "d3-array": "1",
     "eslint": "3",
-    "package-preamble": "0.0",
+    "package-preamble": "0.1",
     "rollup": "0.41",
     "seedrandom": "2",
     "tape": "4",
