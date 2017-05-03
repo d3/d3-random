@@ -12,4 +12,4 @@ export default (function sourceRandomUniform(source) {
   randomUniform.source = sourceRandomUniform;
 
   return randomUniform;
-})(Math.random)
+})(Math.random);

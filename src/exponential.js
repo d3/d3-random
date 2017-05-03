@@ -5,7 +5,7 @@ export default (function sourceRandomExponential(source) {
     };
   }
 
-  randomExponential.source = sourceRandomExponential
+  randomExponential.source = sourceRandomExponential;
 
   return randomExponential;
-})(Math.random)
+})(Math.random);

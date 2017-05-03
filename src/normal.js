@@ -20,7 +20,7 @@ export default (function sourceRandomNormal(source) {
     };
   }
 
-  randomNormal.source = sourceRandomNormal
+  randomNormal.source = sourceRandomNormal;
 
   return randomNormal;
-})(Math.random)
+})(Math.random);
