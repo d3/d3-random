@@ -50,6 +50,6 @@ Returns a function for generating random numbers with an [Irwin–Hall distribut
 
 Returns a function for generating random numbers with an [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) with the rate *lambda*; equivalent to time between events in a [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process) with a mean of 1 / *lambda*. For example, exponential(1/40) generates random times between events where, on average, one event occurs every 40 units of time.
 
-<a name="randomSource" href="#randomSource">#</a> d3.<b>randomSource</b>(<i>randomFn</i>) [<>](https://github.com/d3/d3-random/blob/master/src/source.js "Source")
+<a name="random_source" href="#random_source">#</a> <i>random</i>.<b>source</b>(<i>source</i>)
 
-Returns an object with all of the d3-random functions bound to the given random number generator *randomFn*. The random number generator must implement the same interface as `Math.random` and only return values in the range [0, 1). This is useful for when you'd like to use a seeded random number generator instead of the default `Math.random` in order to make results reproducible.
+Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to the Math.random, for example.
