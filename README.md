@@ -52,4 +52,4 @@ Returns a function for generating random numbers with an [exponential distributi
 
 <a name="random_source" href="#random_source">#</a> <i>random</i>.<b>source</b>(<i>source</i>)
 
-Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to the Math.random, for example.
+Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to Math.random, for example.
