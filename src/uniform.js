@@ -1,4 +1,5 @@
 import defaultSource from "./defaultSource";
+
 export default (function sourceRandomUniform(source) {
   function randomUniform(min, max) {
     min = min == null ? 0 : +min;
