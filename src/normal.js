@@ -1,4 +1,5 @@
 import defaultSource from "./defaultSource";
+
 export default (function sourceRandomNormal(source) {
   function randomNormal(mu, sigma) {
     var x, r;

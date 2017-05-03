@@ -1,4 +1,5 @@
 import defaultSource from "./defaultSource";
+
 export default (function sourceRandomIrwinHall(source) {
   function randomIrwinHall(n) {
     return function() {
