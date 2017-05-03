@@ -1,3 +1,4 @@
+import defaultSource from "./defaultSource";
 export default (function sourceRandomExponential(source) {
   function randomExponential(lambda) {
     return function() {
@@ -8,4 +9,4 @@ export default (function sourceRandomExponential(source) {
   randomExponential.source = sourceRandomExponential;
 
   return randomExponential;
-})(Math.random);
+})(defaultSource);
