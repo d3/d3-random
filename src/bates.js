@@ -1,3 +1,4 @@
+import defaultSource from "./defaultSource";
 import irwinHall from "./irwinHall";
 
 export default (function sourceRandomBates(source) {
@@ -11,4 +12,4 @@ export default (function sourceRandomBates(source) {
   randomBates.source = sourceRandomBates;
 
   return randomBates;
-})(Math.random);
+})(defaultSource);

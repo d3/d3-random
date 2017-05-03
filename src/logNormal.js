@@ -1,3 +1,4 @@
+import defaultSource from "./defaultSource";
 import normal from "./normal";
 
 export default (function sourceRandomLogNormal(source) {
@@ -11,4 +12,4 @@ export default (function sourceRandomLogNormal(source) {
   randomLogNormal.source = sourceRandomLogNormal;
 
   return randomLogNormal;
-})(Math.random);
+})(defaultSource);
