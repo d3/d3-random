@@ -1,8 +1,13 @@
-export default function(lambda) {
-  if (arguments.length != 1) {
-    throw new SyntaxError("exponential(lambda) must be called with only the lambda parameter.");
+import defaultSource from "./defaultSource";
+
+export default (function sourceRandomExponential(source) {
+  function randomExponential(lambda) {
+    return function() {
+      return -Math.log(1 - source()) / lambda;
+    };
   }
-  return function() {
-    return -Math.log(1 - Math.random()) / lambda;
-  };
-}
+
+  randomExponential.source = sourceRandomExponential;
+
+  return randomExponential;
+})(defaultSource);
