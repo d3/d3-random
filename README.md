@@ -50,21 +50,22 @@ Returns a function for generating random numbers with an [Irwin–Hall distribut
 
 Returns a function for generating random numbers with an [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) with the rate *lambda*; equivalent to time between events in a [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process) with a mean of 1 / *lambda*. For example, exponential(1/40) generates random times between events where, on average, one event occurs every 40 units of time.
 
-<a name="randomPareto" href="#randomPareto">#</a> d3.<b>randomPareto</b>(<i>alpha</i>)
+<a name="randomPareto" href="#randomPareto">#</a> d3.<b>randomPareto</b>(<i>alpha</i>) [<>](https://github.com/d3/d3-random/blob/master/src/pareto.js "Source")
 
-Returns a function for generating random numbers with an [pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution) with the shape *alpha*.
+Returns a function for generating random numbers with an [pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution) with the shape *alpha*. The value *alpha* must be a positive value.
 
-<a name="randomBernoulli" href="#randomBernoulli">#</a> d3.<b>randomBernoulli</b>(<i>p</i>)
+<a name="randomBernoulli" href="#randomBernoulli">#</a> d3.<b>randomBernoulli</b>(<i>p</i>) [<>](https://github.com/d3/d3-random/blob/master/src/bernoulli.js "Source")
 
-Returns a function for generating either 1 or 0 according to a [Bernoulli distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with 1 being returned with success probability *p* and 0 with failure probability *q* = 1 - *p*.
+Returns a function for generating either 1 or 0 according to a [Bernoulli distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with 1 being returned with success probability *p* and 0 with failure probability *q* = 1 - *p*. The value *p* is in the range (0, 1).
 
-<a name="randomGeometric" href="#randomGeometric">#</a> d3.<b>randomGeometric</b>(<i>p</i>)
+<a name="randomGeometric" href="#randomGeometric">#</a> d3.<b>randomGeometric</b>(<i>p</i>) [<>](https://github.com/d3/d3-random/blob/master/src/geometric.js "Source")
 
-Returns a function for generating numbers with a [Geometric distribution](https://en.wikipedia.org/wiki/Geometric_distribution) with success probability *p*.
+Returns a function for generating numbers with a [Geometric distribution](https://en.wikipedia.org/wiki/Geometric_distribution) with success probability *p*. The value *p* is in the range (0, 1].
 
-<a name="randomBinomial" href="#randomBinomial">#</a> d3.<b>randomBinomial</b>(<i>n</i>, <i>p</i>)
+<a name="randomBinomial" href="#randomBinomial">#</a> d3.<b>randomBinomial</b>(<i>n</i>, <i>p</i>) [<>](https://github.com/d3/d3-random/blob/master/src/binomial.js "Source")
 
-Returns a function for generating random numbers with a [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with *n* the number of trials and *p* the probability of success in each trial.
+
+Returns a function for generating random numbers with a [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with *n* the number of trials and *p* the probability of success in each trial. The value *n* is greater or equal to 0, and the value *p* is in the range [0,1].
 
 <a name="random_source" href="#random_source">#</a> <i>random</i>.<b>source</b>(<i>source</i>)
 
