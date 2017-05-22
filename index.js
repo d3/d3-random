@@ -1,4 +1,3 @@
-export {version} from "./build/version";
 export {default as randomUniform} from "./src/uniform";
 export {default as randomNormal} from "./src/normal";
 export {default as randomLogNormal} from "./src/logNormal";

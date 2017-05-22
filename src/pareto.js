@@ -1,11 +1,15 @@
-export default function(alpha) {
-    if (arguments.length != 1) {
-        throw new SyntaxError("pareto(alpha) must be called with only the alpha parameter.");
-    }
-    if (alpha < 0) {
-        throw new SyntaxError("pareto(alpha) must be called with alpha >= 0.");
-    }
+import defaultSource from "./defaultSource";
+
+export default (function sourceRandomPareto(source) {
+  function randomPareto(alpha) {
     return function() {
-        return 1.0 / Math.pow((1 - Math.random()), 1.0 / alpha);
+        if ((alpha = +alpha) < 0) throw new RangeError("invalid alpha");
+        
+        return 1 / Math.pow(1 - source(), 1 / alpha);
     };
-}
+  }
+
+  randomPareto.source = sourceRandomPareto;
+
+  return randomPareto;
+})(defaultSource);

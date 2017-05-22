@@ -1,11 +1,15 @@
+import defaultSource from "./defaultSource";
 import irwinHall from "./irwinHall";
 
-export default function(n) {
-  if (arguments.length != 1) {
-    throw new SyntaxError("bates(n) must be called with only the n parameter.");
+export default (function sourceRandomBates(source) {
+  function randomBates(n) {
+    var randomIrwinHall = irwinHall.source(source)(n);
+    return function() {
+      return randomIrwinHall() / n;
+    };
   }
-  var randomIrwinHall = irwinHall(n);
-  return function() {
-    return randomIrwinHall() / n;
-  };
-}
+
+  randomBates.source = sourceRandomBates;
+
+  return randomBates;
+})(defaultSource);

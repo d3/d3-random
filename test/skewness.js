@@ -1,7 +1,7 @@
-var array = require("d3-array");
+var d3 = require("d3-array");
 
 module.exports = function(numbers) {
-  var mean = array.mean(numbers),
+  var mean = d3.mean(numbers),
       sum3 = 0,
       sum2 = 0,
       v,
