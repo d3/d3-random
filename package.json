@@ -14,7 +14,7 @@
     "name": "Mike Bostock",
     "url": "http://bost.ocks.org/mike"
   },
-  "main": "build/d3-random.js",
+  "main": "dist/d3-random.min.js",
   "module": "index",
   "jsnext:main": "index",
   "repository": {
@@ -22,18 +22,17 @@
     "url": "https://github.com/d3/d3-random.git"
   },
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -n d3 -o build/d3-random.js -- index.js",
-    "test": "tape 'test/**/*-test.js' && eslint index.js src",
-    "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-random.js -c -m -o build/d3-random.min.js",
-    "postpublish": "git push && git push --tags && cd ../d3.github.com && cp ../d3-random/build/d3-random.js d3-random.v1.js && cp ../d3-random/build/d3-random.min.js d3-random.v1.min.js && git add d3-random.v1.js d3-random.v1.min.js && git commit -m \"d3-random ${npm_package_version}\" && git push && cd - && zip -j build/d3-random.zip -- LICENSE README.md build/d3-random.js build/d3-random.min.js"
+    "pretest": "rollup -c",
+    "test": "tape 'test/**/*-test.js' && eslint index.js src test",
+    "prepublishOnly": "rm -rf dist && yarn test",
+    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../${npm_package_name}/dist/${npm_package_name}.js ${npm_package_name}.v1.js && cp ../${npm_package_name}/dist/${npm_package_name}.min.js ${npm_package_name}.v1.min.js && git add ${npm_package_name}.v1.js ${npm_package_name}.v1.min.js && git commit -m \"${npm_package_name} ${npm_package_version}\" && git push && cd - && zip -j dist/${npm_package_name}.zip -- LICENSE README.md dist/${npm_package_name}.js dist/${npm_package_name}.min.js"
   },
   "devDependencies": {
     "d3-array": "1",
-    "eslint": "3",
-    "package-preamble": "0.1",
-    "rollup": "0.41",
+    "eslint": "5",
+    "rollup": "0.64",
+    "rollup-plugin-terser": "1",
     "seedrandom": "2",
-    "tape": "4",
-    "uglify-js": "^2.8.11"
+    "tape": "4"
   }
 }
