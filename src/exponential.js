@@ -1,4 +1,4 @@
-import defaultSource from "./defaultSource";
+import defaultSource from "./defaultSource.js";
 
 export default (function sourceRandomExponential(source) {
   function randomExponential(lambda) {

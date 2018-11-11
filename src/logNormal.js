@@ -1,5 +1,5 @@
-import defaultSource from "./defaultSource";
-import normal from "./normal";
+import defaultSource from "./defaultSource.js";
+import normal from "./normal.js";
 
 export default (function sourceRandomLogNormal(source) {
   function randomLogNormal() {

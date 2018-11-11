@@ -1,5 +1,5 @@
-import defaultSource from "./defaultSource";
-import irwinHall from "./irwinHall";
+import defaultSource from "./defaultSource.js";
+import irwinHall from "./irwinHall.js";
 
 export default (function sourceRandomBates(source) {
   function randomBates(n) {
