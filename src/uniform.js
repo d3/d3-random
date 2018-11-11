@@ -1,4 +1,4 @@
-import defaultSource from "./defaultSource";
+import defaultSource from "./defaultSource.js";
 
 export default (function sourceRandomUniform(source) {
   function randomUniform(min, max) {
