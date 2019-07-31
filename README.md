@@ -4,10 +4,10 @@ Generate random numbers from various distributions.
 
 ## Installing
 
-If you use NPM, `npm install d3-random`. Otherwise, download the [latest release](https://github.com/d3/d3-random/releases/latest). You can also load directly as a [standalone library](https://d3js.org/d3-random.v1.min.js) or as part of [D3](https://github.com/d3/d3). ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
+If you use NPM, `npm install d3-random`. Otherwise, download the [latest release](https://github.com/d3/d3-random/releases/latest). You can also load directly as a [standalone library](https://d3js.org/d3-random.v2.min.js) or as part of [D3](https://github.com/d3/d3). ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
 
 ```html
-<script src="https://d3js.org/d3-random.v1.min.js"></script>
+<script src="https://d3js.org/d3-random.v2.min.js"></script>
 <script>
 
 var random = d3.randomUniform(1, 10);
