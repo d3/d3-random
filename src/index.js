@@ -5,3 +5,7 @@ export {default as randomLogNormal} from "./logNormal.js";
 export {default as randomBates} from "./bates.js";
 export {default as randomIrwinHall} from "./irwinHall.js";
 export {default as randomExponential} from "./exponential.js";
+export {default as randomPareto} from "./pareto.js";
+export {default as randomBernoulli} from "./bernoulli.js";
+export {default as randomGeometric} from "./geometric.js";
+export {default as randomBinomial} from "./binomial.js";
