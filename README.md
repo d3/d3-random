@@ -2,6 +2,8 @@
 
 Generate random numbers from various distributions.
 
+See the [d3-random collection on Observable](https://observablehq.com/collection/@d3/d3-random) for examples.
+
 ## Installing
 
 If you use NPM, `npm install d3-random`. Otherwise, download the [latest release](https://github.com/d3/d3-random/releases/latest). You can also load directly as a [standalone library](https://d3js.org/d3-random.v2.min.js) or as part of [D3](https://github.com/d3/d3). ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
