@@ -1,4 +1,4 @@
-import defaultSource from "./defaultSource";
+import defaultSource from "./defaultSource.js";
 
 export default (function sourceRandomPareto(source) {
   function randomPareto(alpha) {

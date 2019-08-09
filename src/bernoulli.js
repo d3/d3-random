@@ -1,4 +1,4 @@
-import defaultSource from "./defaultSource";
+import defaultSource from "./defaultSource.js";
 
 export default (function sourceRandomBernoulli(source) {
   function randomBernoulli(p) {
