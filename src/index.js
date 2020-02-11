@@ -9,3 +9,5 @@ export {default as randomPareto} from "./pareto.js";
 export {default as randomBernoulli} from "./bernoulli.js";
 export {default as randomGeometric} from "./geometric.js";
 export {default as randomBinomial} from "./binomial.js";
+export {default as randomGamma} from "./gamma.js";
+export {default as randomBeta} from "./beta.js";
