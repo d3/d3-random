@@ -73,6 +73,14 @@ Returns a function for generating numbers with a [geometric distribution](https:
 
 Returns a function for generating random numbers with a [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) with *n* the number of trials and *p* the probability of success in each trial. The value *n* is greater or equal to 0, and the value *p* is in the range [0, 1].
 
+<a name="randomGamma" href="#randomGamma">#</a> d3.<b>randomGamma</b>(<i>k</i>, [<i>theta</i>]) · [Source](https://github.com/d3/d3-random/blob/master/src/gamma.js), [Examples](https://observablehq.com/@parcly-taxel/the-gamma-and-beta-distributions)
+
+Returns a function for generating random numbers with a [gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution) with *k* the shape parameter and *theta* the scale parameter. The value *k* must be a positive value; if *theta* is not specified, it defaults to 1.
+
+<a name="randomBeta" href="#randomBeta">#</a> d3.<b>randomBeta</b>(<i>alpha</i>, <i>beta</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/beta.js), [Examples](https://observablehq.com/@parcly-taxel/the-gamma-and-beta-distributions)
+
+Returns a function for generating random numbers with a [beta distribution](https://en.wikipedia.org/wiki/Beta_distribution) with *alpha* and *beta* shape parameters, which must both be positive.
+
 <a name="random_source" href="#random_source">#</a> <i>random</i>.<b>source</b>(<i>source</i>) · [Examples](https://observablehq.com/@d3/random-source)
 
 Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to Math.random. For example:
