@@ -43,7 +43,7 @@ tape("d3.randomBates(n) returns random numbers with a kurtosis of -6 / (5 * n)",
 });
 
 tape("d3.randomBates(0) is equivalent to d3.randomUniform()", function(test) {
-  var randomBates = d3.randomBates.source(seedrandom("3c21f0c8f5a8332c"));
+  var randomBates = d3.randomBates.source(seedrandom("7f1d6e8020b157d6"));
   test.inDelta(d3.mean(d3.range(10000).map(randomBates(0))), 0.5, 0.05);
   test.inDelta(d3.variance(d3.range(10000).map(randomBates(0))), 1 / 12, 0.05);
   test.inDelta(skewness(d3.range(10000).map(randomBates(0))), 0, 0.05);
