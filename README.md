@@ -85,6 +85,14 @@ Returns a function for generating random numbers with a [beta distribution](http
 
 Returns a function for generating random numbers with a [Weibull distribution](https://en.wikipedia.org/wiki/Weibull_distribution) with *lambda* the scale parameter and *k* the shape parameter. The value *k* must be a positive value.
 
+<a name="randomCauchy" href="#randomCauchy">#</a> d3.<b>randomCauchy</b>([<i>a</i>], [<i>b</i>]) · [Source](https://github.com/d3/d3-random/blob/master/src/cauchy.js), [Examples](https://observablehq.com/@parcly-taxel/cauchy-and-logistic-distributions)
+
+Returns a function for generating random numbers with a [Cauchy distribution](https://en.wikipedia.org/wiki/Cauchy_distribution) with *a* the location parameter and *b* the scale parameter. If *a* is not specified, it defaults to 0; if *b* is not specified, it defaults to 1.
+
+<a name="randomLogistic" href="#randomLogistic">#</a> d3.<b>randomLogistic</b>([<i>a</i>], [<i>b</i>]) · [Source](https://github.com/d3/d3-random/blob/master/src/logistic.js), [Examples](https://observablehq.com/@parcly-taxel/cauchy-and-logistic-distributions)
+
+Returns a function for generating random numbers with a [logistic distribution](https://en.wikipedia.org/wiki/Logistic_distribution). Parameter meanings and default values are the same as with d3.randomCauchy().
+
 <a name="random_source" href="#random_source">#</a> <i>random</i>.<b>source</b>(<i>source</i>) · [Examples](https://observablehq.com/@d3/random-source)
 
 Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to Math.random. For example:
