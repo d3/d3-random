@@ -47,11 +47,11 @@ Returns a function for generating random numbers with a [log-normal distribution
 
 <a name="randomBates" href="#randomBates">#</a> d3.<b>randomBates</b>(<i>n</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/bates.js), [Examples](https://observablehq.com/@d3/d3-random#bates)
 
-Returns a function for generating random numbers with a [Bates distribution](https://en.wikipedia.org/wiki/Bates_distribution) with *n* independent variables.
+Returns a function for generating random numbers with a [Bates distribution](https://en.wikipedia.org/wiki/Bates_distribution) with *n* independent variables. The case of fractional *n* is handled as with d3.randomIrwinHall, and d3.randomBates(0) is equivalent to d3.randomUniform().
 
 <a name="randomIrwinHall" href="#randomIrwinHall">#</a> d3.<b>randomIrwinHall</b>(<i>n</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/irwinHall.js), [Examples](https://observablehq.com/@d3/d3-random#irwinHall)
 
-Returns a function for generating random numbers with an [Irwin–Hall distribution](https://en.wikipedia.org/wiki/Irwin–Hall_distribution) with *n* independent variables.
+Returns a function for generating random numbers with an [Irwin–Hall distribution](https://en.wikipedia.org/wiki/Irwin–Hall_distribution) with *n* independent variables. If the fractional part of *n* is non-zero, this is treated as adding d3.randomUniform() times that fractional part to the integral part.
 
 <a name="randomExponential" href="#randomExponential">#</a> d3.<b>randomExponential</b>(<i>lambda</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/exponential.js), [Examples](https://observablehq.com/@d3/d3-random#exponential)
 
