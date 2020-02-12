@@ -7,7 +7,7 @@ export default (function sourceRandomBeta(source) {
         Y = gamma.source(source)(beta);
     return function() {
       var x = X();
-      return x / (x + Y());
+      return x === 0 ? 0 : x / (x + Y());
     };
   }
 

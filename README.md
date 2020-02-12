@@ -81,6 +81,10 @@ Returns a function for generating random numbers with a [gamma distribution](htt
 
 Returns a function for generating random numbers with a [beta distribution](https://en.wikipedia.org/wiki/Beta_distribution) with *alpha* and *beta* shape parameters, which must both be positive.
 
+<a name="randomWeibull" href="#randomWeibull">#</a> d3.<b>randomWeibull</b>(<i>lambda</i>, <i>k</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/weibull.js), [Examples](https://observablehq.com/@troymagennis/weibull-distribution)
+
+Returns a function for generating random numbers with a [Weibull distribution](https://en.wikipedia.org/wiki/Weibull_distribution) with *lambda* the scale parameter and *k* the shape parameter. The value *k* must be a positive value.
+
 <a name="random_source" href="#random_source">#</a> <i>random</i>.<b>source</b>(<i>source</i>) · [Examples](https://observablehq.com/@d3/random-source)
 
 Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to Math.random. For example:
