@@ -4,7 +4,7 @@ var tape = require("tape"),
     kurtosis = require("./kurtosis"),
     d3 = Object.assign({}, require("../"), require("d3-array"));
 
-require("seedrandom");
+require("./inDelta");
 
 var mean = function(n, p) { return n * p; };
 var variance = function(n, p) { return n * p * (1 - p); };
