@@ -67,7 +67,7 @@ Returns a function for generating either 1 or 0 according to a [Bernoulli distri
 
 <a name="randomGeometric" href="#randomGeometric">#</a> d3.<b>randomGeometric</b>(<i>p</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/geometric.js), [Examples](https://observablehq.com/@d3/d3-random#geometric)
 
-Returns a function for generating numbers with a [geometric distribution](https://en.wikipedia.org/wiki/Geometric_distribution) with success probability *p*. The value *p* is in the range (0, 1].
+Returns a function for generating numbers with a [geometric distribution](https://en.wikipedia.org/wiki/Geometric_distribution) with success probability *p*. The value *p* is in the range [0, 1].
 
 <a name="randomBinomial" href="#randomBinomial">#</a> d3.<b>randomBinomial</b>(<i>n</i>, <i>p</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/binomial.js), [Examples](https://observablehq.com/@d3/d3-random#binomial)
 
