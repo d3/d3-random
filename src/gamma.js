@@ -8,7 +8,7 @@ export default (function sourceRandomGamma(source) {
     if (k === 0) return () => 0;
     theta = theta == null ? 1 : +theta;
     // exponential distribution if k === 1
-    if (k === 1) return () => -Math.log(1 - source()) * theta;
+    if (k === 1) return () => -Math.log1p(-source()) * theta;
 
     var randomNormal = normal.source(source)(),
         d = (k < 1 ? k + 1 : k) - 1 / 3,
