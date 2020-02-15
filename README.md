@@ -59,7 +59,7 @@ Returns a function for generating random numbers with an [exponential distributi
 
 <a name="randomPareto" href="#randomPareto">#</a> d3.<b>randomPareto</b>(<i>alpha</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/pareto.js), [Examples](https://observablehq.com/@d3/d3-random#pareto)
 
-Returns a function for generating random numbers with an [Pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution) with the shape *alpha*. The value *alpha* must be a positive value.
+Returns a function for generating random numbers with a [Pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution) with the shape *alpha*. The value *alpha* must be a positive value.
 
 <a name="randomBernoulli" href="#randomBernoulli">#</a> d3.<b>randomBernoulli</b>(<i>p</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/bernoulli.js), [Examples](https://observablehq.com/@d3/d3-random#bernoulli)
 
@@ -92,6 +92,10 @@ Returns a function for generating random numbers with a [Cauchy distribution](ht
 <a name="randomLogistic" href="#randomLogistic">#</a> d3.<b>randomLogistic</b>([<i>a</i>], [<i>b</i>]) · [Source](https://github.com/d3/d3-random/blob/master/src/logistic.js), [Examples](https://observablehq.com/@parcly-taxel/cauchy-and-logistic-distributions)
 
 Returns a function for generating random numbers with a [logistic distribution](https://en.wikipedia.org/wiki/Logistic_distribution). Parameter meanings and default values are the same as with d3.randomCauchy().
+
+<a name="randomPoisson" href="#randomPoisson">#</a> d3.<b>randomPoisson</b>(<i>lambda</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/poisson.js), [Examples](https://observablehq.com/@parcly-taxel/the-poisson-distribution)
+
+Returns a function for generating random numbers with a [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution) with mean *lambda*.
 
 <a name="random_source" href="#random_source">#</a> <i>random</i>.<b>source</b>(<i>source</i>) · [Examples](https://observablehq.com/@d3/random-source)
 
