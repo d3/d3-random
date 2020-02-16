@@ -6,20 +6,28 @@ require("./inDelta");
 
 tape("randomWeibull() returns random numbers with the specified mean", function (test) {
   var randomWeibull = d3.randomWeibull.source(seedrandom("5125ce415d4cd8e"));
-  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(1, 0.3))), 9.260, 1);
-  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(1, 1))), 1, 0.1);
-  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(1, 3))), 0.893, 0.1);
-  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(1, 9))), 0.947, 0.1);
-  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(2, 4))), 1.813, 0.2);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(9))), 0.947, 0.1);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(3))), 0.893, 0.1);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(1))), 1, 0.1);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(0.3))), 9.260, 1);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(0))), 0.577, 0.1);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(-3))), 1.354, 0.1);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(-9))), 1.078, 0.1);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(4, 1, 2))), 2.813, 0.2);
+  test.inDelta(d3.mean(d3.range(10000).map(randomWeibull(-4, 1, 2))), 3.451, 0.2);
   test.end();
 });
 
 tape("randomWeibull() returns random numbers with the specified deviation", function (test) {
   var randomWeibull = d3.randomWeibull.source(seedrandom("2d61cfee9eb78d19"));
-  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(1, 0.3))), 50, 10);
-  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(1, 1))), 1, 0.2);
-  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(1, 3))), 0.324, 0.06);
-  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(1, 9))), 0.126, 0.02);
-  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(2, 4))), 0.509, 0.1);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(9))), 0.126, 0.02);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(3))), 0.324, 0.06);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(1))), 1, 0.2);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(0.3))), 50, 10);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(0))), 1.282, 0.05);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(-3))), 0.919, 0.1);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(-9))), 0.169, 0.02);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(4, 1, 2))), 0.509, 0.1);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomWeibull(-4, 1, 2))), 1.0408, 0.1);
   test.end();
 });

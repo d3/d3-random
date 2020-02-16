@@ -81,17 +81,23 @@ Returns a function for generating random numbers with a [gamma distribution](htt
 
 Returns a function for generating random numbers with a [beta distribution](https://en.wikipedia.org/wiki/Beta_distribution) with *alpha* and *beta* shape parameters, which must both be positive.
 
-<a name="randomWeibull" href="#randomWeibull">#</a> d3.<b>randomWeibull</b>(<i>lambda</i>, <i>k</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/weibull.js), [Examples](https://observablehq.com/@troymagennis/weibull-distribution)
+<a name="randomWeibull" href="#randomWeibull">#</a> d3.<b>randomWeibull</b>(<i>k</i>, [<i>a</i>], [<i>b</i>]) · [Source](https://github.com/d3/d3-random/blob/master/src/weibull.js), [Examples](https://observablehq.com/@parcly-taxel/frechet-gumbel-weibull)
 
-Returns a function for generating random numbers with a [Weibull distribution](https://en.wikipedia.org/wiki/Weibull_distribution) with *lambda* the scale parameter and *k* the shape parameter. The value *k* must be a positive value.
+Returns a function for generating random numbers with one of the [generalized extreme value distributions](https://en.wikipedia.org/wiki/Generalized_extreme_value_distribution), depending on *k*:
+
+* If *k* is positive, the [Weibull distribution](https://en.wikipedia.org/wiki/Weibull_distribution) with shape parameter *k*
+* If *k* is zero, the [Gumbel distribution](https://en.wikipedia.org/wiki/Gumbel_distribution)
+* If *k* is negative, the [Fréchet distribution](https://en.wikipedia.org/wiki/Fréchet_distribution) with shape parameter −*k*
+
+In all three cases, *a* is the location parameter and *b* is the scale parameter. If *a* is not specified, it defaults to 0; if *b* is not specified, it defaults to 1.
 
 <a name="randomCauchy" href="#randomCauchy">#</a> d3.<b>randomCauchy</b>([<i>a</i>], [<i>b</i>]) · [Source](https://github.com/d3/d3-random/blob/master/src/cauchy.js), [Examples](https://observablehq.com/@parcly-taxel/cauchy-and-logistic-distributions)
 
-Returns a function for generating random numbers with a [Cauchy distribution](https://en.wikipedia.org/wiki/Cauchy_distribution) with *a* the location parameter and *b* the scale parameter. If *a* is not specified, it defaults to 0; if *b* is not specified, it defaults to 1.
+Returns a function for generating random numbers with a [Cauchy distribution](https://en.wikipedia.org/wiki/Cauchy_distribution). *a* and *b* have the same meanings and default values as in d3.randomWeibull.
 
 <a name="randomLogistic" href="#randomLogistic">#</a> d3.<b>randomLogistic</b>([<i>a</i>], [<i>b</i>]) · [Source](https://github.com/d3/d3-random/blob/master/src/logistic.js), [Examples](https://observablehq.com/@parcly-taxel/cauchy-and-logistic-distributions)
 
-Returns a function for generating random numbers with a [logistic distribution](https://en.wikipedia.org/wiki/Logistic_distribution). Parameter meanings and default values are the same as with d3.randomCauchy().
+Returns a function for generating random numbers with a [logistic distribution](https://en.wikipedia.org/wiki/Logistic_distribution). *a* and *b* have the same meanings and default values as in d3.randomWeibull.
 
 <a name="randomPoisson" href="#randomPoisson">#</a> d3.<b>randomPoisson</b>(<i>lambda</i>) · [Source](https://github.com/d3/d3-random/blob/master/src/poisson.js), [Examples](https://observablehq.com/@parcly-taxel/the-poisson-distribution)
 
