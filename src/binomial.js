@@ -3,6 +3,9 @@ import beta from "./beta.js";
 import geometric from "./geometric.js";
 
 export default (function sourceRandomBinomial(source) {
+  var G = geometric.source(source),
+      B = beta.source(source);
+
   function randomBinomial(n, p) {
     n = +n;
     if ((p = +p) >= 1) return () => n;
@@ -11,7 +14,7 @@ export default (function sourceRandomBinomial(source) {
       var acc = 0, nn = n, pp = p;
       while (nn * pp > 16 && nn * (1 - pp) > 16) {
         var i = Math.floor((nn + 1) * pp),
-            y = beta.source(source)(i, nn - i + 1)();
+            y = B(i, nn - i + 1)();
         if (y <= pp) {
           acc += i;
           nn -= i;
@@ -23,7 +26,7 @@ export default (function sourceRandomBinomial(source) {
       }
       var sign = pp < 0.5,
           pFinal = sign ? pp : 1 - pp,
-          g = geometric.source(source)(pFinal);
+          g = G(pFinal);
       for (var s = g(), k = 0; s <= nn; ++k) s += g();
       return acc + (sign ? k : nn - k);
     };

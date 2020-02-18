@@ -2,6 +2,8 @@ import defaultSource from "./defaultSource.js";
 import normal from "./normal.js";
 
 export default (function sourceRandomGamma(source) {
+  var randomNormal = normal.source(source)();
+
   function randomGamma(k, theta) {
     if ((k = +k) < 0) throw new RangeError("invalid k");
     // degenerate distribution if k === 0
@@ -10,8 +12,7 @@ export default (function sourceRandomGamma(source) {
     // exponential distribution if k === 1
     if (k === 1) return () => -Math.log1p(-source()) * theta;
 
-    var randomNormal = normal.source(source)(),
-        d = (k < 1 ? k + 1 : k) - 1 / 3,
+    var d = (k < 1 ? k + 1 : k) - 1 / 3,
         c = 1 / (3 * Math.sqrt(d)),
         multiplier = k < 1 ? () => Math.pow(source(), 1 / k) : () => 1;
     return function() {
