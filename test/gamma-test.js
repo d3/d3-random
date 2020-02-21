@@ -42,7 +42,7 @@ tape("randomGamma(k) returns random numbers with an excess kurtosis of 6 / k", f
   test.inDelta(kurtosis(d3.range(10000).map(randomGamma(0.5))), 12, 3);
   test.inDelta(kurtosis(d3.range(10000).map(randomGamma(1))), 6, 1.5);
   test.inDelta(kurtosis(d3.range(10000).map(randomGamma(2))), 3, 0.75);
-  test.inDelta(kurtosis(d3.range(10000).map(randomGamma(10))), 0.6, 0.15);
+  test.inDelta(kurtosis(d3.range(10000).map(randomGamma(10))), 0.6, 0.2);
   test.end();
 });
 
