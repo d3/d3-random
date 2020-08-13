@@ -15,3 +15,4 @@ export {default as randomWeibull} from "./weibull.js";
 export {default as randomCauchy} from "./cauchy.js";
 export {default as randomLogistic} from "./logistic.js";
 export {default as randomPoisson} from "./poisson.js";
+export {default as randomLCG} from "./lcg.js";

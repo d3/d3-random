@@ -108,9 +108,13 @@ Returns a function for generating random numbers with a [Poisson distribution](h
 Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to Math.random. For example:
 
 ```js
-var d3 = require("d3-random"),
-    seedrandom = require("seedrandom"),
-    random = d3.randomNormal.source(seedrandom("a22ebc7c488a3a47"))(0, 1);
+const d3 = require("d3-random"),
+    seed = 42,
+    random = d3.randomNormal.source(d3.randomLCG(seed))(0, 1);
 
-random(); // 0.9744193494813501
+random(); // 1.4904793740925901
 ```
+
+<a name="randomLCG" href="#randomLCG">#</a> d3.<b>randomLCG</b>(<i>[seed]</i>) · [Examples](https://observablehq.com/@fil/linear-congruential-generator)
+
+Returns a [Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator), seeded on the specified number, which defaults to 0. The generator can be called repeatedly to obtain a pseudo-random sequence of values, well-distributed on the interval [0,1), and with a long period (up to 1 billion numbers). When run with the same seed, the sequence is guaranteed to be the same. Different seeds will usually result in different sequences, but no guarantee is made. In particular, a negative seed results in the same sequence as its absolute value.
