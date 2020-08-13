@@ -1,11 +1,10 @@
 var tape = require("tape"),
-    seedrandom = require("seedrandom"),
     d3 = Object.assign({}, require("../"), require("d3-array"));
 
 require("./inDelta");
 
 tape("randomPareto() returns randoms with specified mean", function (test) {
-  var randomPareto = d3.randomPareto.source(seedrandom("111c7d3df15b2"));
+  var randomPareto = d3.randomPareto.source(d3.randomLcg(1));
   test.equal(d3.mean(d3.range(10000).map(randomPareto(0))), Infinity);
   test.inDelta(d3.mean(d3.range(10000).map(randomPareto(1))), 10, .5);
   test.inDelta(d3.mean(d3.range(10000).map(randomPareto(3))), 1.5, .1);
@@ -15,7 +14,7 @@ tape("randomPareto() returns randoms with specified mean", function (test) {
 });
 
 tape("randomPareto() returns randoms with specified deviation", function (test) {
-  var randomPareto = d3.randomPareto.source(seedrandom("111c7d3df15b2"));
+  var randomPareto = d3.randomPareto.source(d3.randomLcg(2));
   test.assert(isNaN(d3.deviation(d3.range(10000).map(randomPareto(0)))));
   test.inDelta(d3.deviation(d3.range(10000).map(randomPareto(1))), 85, 5);
   test.inDelta(d3.deviation(d3.range(10000).map(randomPareto(3))), 1.15, .1);
@@ -25,7 +24,7 @@ tape("randomPareto() returns randoms with specified deviation", function (test) 
 });
 
 tape("randomPareto(3) returns randoms with mean of 1.5 and deviation of 0.9", function (test) {
-  var randomPareto = d3.randomPareto.source(seedrandom("a6dffb6828b2b"));
+  var randomPareto = d3.randomPareto.source(d3.randomLcg(3));
   test.inDelta(d3.deviation(d3.range(10000).map(randomPareto(3))), 0.9, .05);
   test.inDelta(d3.mean(d3.range(10000).map(randomPareto(3))), 1.5, .05);
   test.end();

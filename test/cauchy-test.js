@@ -1,5 +1,4 @@
 var tape = require("tape"),
-    seedrandom = require("seedrandom"),
     d3 = Object.assign({}, require("../"), require("d3-array"));
 
 require("./inDelta");
@@ -8,7 +7,7 @@ require("./inDelta");
 // we simply test for the median, equivalent to the location parameter.
 
 tape("randomCauchy(a, b) returns random numbers with a median of a", function(test) {
-  var randomCauchy = d3.randomCauchy.source(seedrandom("60a03c00bbf7486f"));
+  var randomCauchy = d3.randomCauchy.source(d3.randomLcg(42));
   test.inDelta(d3.median(d3.range(10000).map(randomCauchy())), 0, 0.05);
   test.inDelta(d3.median(d3.range(10000).map(randomCauchy(5))), 5, 0.05);
   test.inDelta(d3.median(d3.range(10000).map(randomCauchy(0, 4))), 0, 0.1);
