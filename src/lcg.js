@@ -1,7 +1,8 @@
-export default seed => {
-  const a = 1664525,
-    c = 1013904223,
-    m = 4294967296; // 2^32
-  let s = Math.abs(a * +seed) || 1;
+const a = 1664525;
+const c = 1013904223;
+const m = 4294967296; // 2^32
+
+export default function lcg(s = 1) {
+  if (!(s >= 0)) throw new Error(“invalid seed”);
   return () => (s = (a * s + c) % m) / m;
-};
+}
