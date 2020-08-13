@@ -115,6 +115,6 @@ const d3 = require("d3-random"),
 random(); // 1.4904793740925901
 ```
 
-<a name="randomLCG" href="#randomLCG">#</a> d3.<b>randomLCG</b>(<i>[seed]</i>) · [Examples](https://observablehq.com/@fil/linear-congruential-generator)
+<a name="randomLcg" href="#randomLcg">#</a> d3.<b>randomLcg</b>(<i>[seed]</i>) · [Examples](https://observablehq.com/@fil/linear-congruential-generator)
 
 Returns a [Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator), seeded on the specified non-negative integer, which defaults to 0. The generator can be called repeatedly to obtain a pseudo-random sequence of values, well-distributed on the interval [0,1), and with a long period (up to 1 billion numbers). When run with the same seed, the sequence is guaranteed to be the same. Different seeds will usually result in different sequences, but no guarantee is made.
