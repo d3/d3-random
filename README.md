@@ -110,7 +110,7 @@ Returns the same type of function for generating random numbers but where the gi
 ```js
 const d3 = require("d3-random"),
     seed = 42,
-    random = d3.randomNormal.source(d3.randomLCG(seed))(0, 1);
+    random = d3.randomNormal.source(d3.randomLcg(seed))(0, 1);
 
 random(); // 1.4904793740925901
 ```
