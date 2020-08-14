@@ -34,8 +34,8 @@ tape("d3.randomIrwinHall(n) returns random numbers with a skewness of 0", functi
 
 tape("d3.randomIrwinHall(n) returns random numbers with a kurtosis of -6 / (5 * n)", function(test) {
   var randomIrwinHall = d3.randomIrwinHall.source(d3.randomLcg(4));
-  test.inDelta(kurtosis(d3.range(10000).map(randomIrwinHall(1))), -6 / 5, 0.05);
-  test.inDelta(kurtosis(d3.range(10000).map(randomIrwinHall(10))), -6 / 50, 0.05);
+  test.inDelta(kurtosis(d3.range(10000).map(randomIrwinHall(1))), -6 / 5, 0.1);
+  test.inDelta(kurtosis(d3.range(10000).map(randomIrwinHall(10))), -6 / 50, 0.1);
   test.inDelta(kurtosis(d3.range(10000).map(randomIrwinHall(1.5))), -6 / 7.5, 0.05);
   test.inDelta(kurtosis(d3.range(10000).map(randomIrwinHall(4.2))), -6 / 21, 0.05);
   test.end();

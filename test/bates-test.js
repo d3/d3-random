@@ -35,7 +35,7 @@ tape("d3.randomBates(n) returns random numbers with a skewness of 0", function(t
 tape("d3.randomBates(n) returns random numbers with a kurtosis of -6 / (5 * n)", function(test) {
   var randomBates = d3.randomBates.source(d3.randomLcg(4));
   test.inDelta(kurtosis(d3.range(10000).map(randomBates(1))), -6 / 5, 0.05);
-  test.inDelta(kurtosis(d3.range(10000).map(randomBates(10))), -6 / 50, 0.05);
+  test.inDelta(kurtosis(d3.range(10000).map(randomBates(10))), -6 / 50, 0.1);
   test.inDelta(kurtosis(d3.range(10000).map(randomBates(1.5))), -6 / 7.5, 0.05);
   test.inDelta(kurtosis(d3.range(10000).map(randomBates(4.2))), -6 / 21, 0.05);
   test.end();

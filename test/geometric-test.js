@@ -32,7 +32,7 @@ tape("randomGeometric(p) returns random geometrically distributed numbers with a
   var randomGeometric = d3.randomGeometric.source(d3.randomLcg(3));
   test.inDelta(skewness(d3.range(10000).map(randomGeometric(.5))), skew(.5), 0.05 * skew(.5));
   test.inDelta(skewness(d3.range(10000).map(randomGeometric(0.25))), skew(0.25), 0.05 * skew(0.25));
-  test.inDelta(skewness(d3.range(10000).map(randomGeometric(0.125))), skew(0.125), 0.05 * skew(0.125));
+  test.inDelta(skewness(d3.range(10000).map(randomGeometric(0.125))), skew(0.125), 0.1 * skew(0.125));
   test.end();
 });
 

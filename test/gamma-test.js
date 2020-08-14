@@ -7,7 +7,7 @@ require("./inDelta");
 
 tape("randomGamma(k) returns random numbers with a mean of k", function(test) {
   var randomGamma = d3.randomGamma.source(d3.randomLcg(1));
-  test.inDelta(d3.mean(d3.range(10000).map(randomGamma(0.1))), 0.1, 0.005);
+  test.inDelta(d3.mean(d3.range(10000).map(randomGamma(0.1))), 0.1, 0.01);
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(0.5))), 0.5, 0.05);
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(1))), 1, 0.05);
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(2))), 2, 0.05);
