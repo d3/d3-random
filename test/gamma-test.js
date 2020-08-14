@@ -48,8 +48,8 @@ tape("randomGamma(k) returns random numbers with an excess kurtosis of 6 / k", f
 tape("randomGamma(k, theta) returns random numbers with a mean of k * theta and a variance of k * theta^2", function(test) {
   var randomGamma = d3.randomGamma.source(d3.randomLcg(5));
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(1, 2))), 2, 0.05);
-  test.inDelta(d3.mean(d3.range(10000).map(randomGamma(2, 4))), 8, 0.1);
-  test.inDelta(d3.variance(d3.range(10000).map(randomGamma(1, 2))), 4, 0.2);
-  test.inDelta(d3.variance(d3.range(10000).map(randomGamma(2, 4))), 32, 1);
+  test.inDelta(d3.mean(d3.range(10000).map(randomGamma(2, 4))), 8, 0.2);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomGamma(1, 2))), 2, 0.1);
+  test.inDelta(d3.deviation(d3.range(10000).map(randomGamma(2, 4))), Math.sqrt(2) * 4, 0.1);
   test.end();
 });

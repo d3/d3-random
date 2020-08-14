@@ -37,9 +37,9 @@ tape("randomGeometric(p) returns random geometrically distributed numbers with a
 });
 
 tape("randomGeometric(p) returns random geometrically distributed numbers with a kurtosis excess of (p^2 - 6 * p + 6) / (1 - p).", function(test) {
-  var randomGeometric = d3.randomGeometric.source(d3.randomLcg(4));
-  test.inDelta(kurtosis(d3.range(10000).map(randomGeometric(.5))), kurt(.5), 0.1 * kurt(.5));
-  test.inDelta(kurtosis(d3.range(10000).map(randomGeometric(0.25))), kurt(0.25), 0.1 * kurt(0.25));
-  test.inDelta(kurtosis(d3.range(10000).map(randomGeometric(0.125))), kurt(0.125), 0.1 * kurt(0.125));
+  var randomGeometric = d3.randomGeometric.source(d3.randomLcg(42));
+  test.inDelta(kurtosis(d3.range(20000).map(randomGeometric(.5))), kurt(.5), 0.2 * kurt(.5));
+  test.inDelta(kurtosis(d3.range(20000).map(randomGeometric(0.25))), kurt(0.25), 0.3 * kurt(0.25));
+  test.inDelta(kurtosis(d3.range(20000).map(randomGeometric(0.125))), kurt(0.125), 0.3 * kurt(0.125));
   test.end();
 });

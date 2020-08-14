@@ -30,16 +30,16 @@ tape("randomBernoulli(p) returns random bernoulli distributed numbers with a var
 
 tape("randomBernoulli(p) returns random bernoulli distributed numbers with a skewness of (1 - 2 * p) / sqrt(p * (1 - p)).", function(test) {
   var randomBernoulli = d3.randomBernoulli.source(d3.randomLcg(3));
-  test.inDelta(skewness(d3.range(10000).map(randomBernoulli(.5))), skew(.5), 0.05);
+  test.inDelta(skewness(d3.range(10000).map(randomBernoulli(.5))), skew(.5), 0.08);
   test.inDelta(skewness(d3.range(10000).map(randomBernoulli(.25))), skew(.25), 0.05);
   test.end();
 });
 
 tape("randomBernoulli(p) returns random bernoulli distributed numbers with a kurtosis excess of (6 * p^2 - 6 * p - 1) / (p * (1 - p)).", function(test) {
   var randomBernoulli = d3.randomBernoulli.source(d3.randomLcg(4));
-  test.inDelta(kurtosis(d3.range(10000).map(randomBernoulli(.05))), kurt(.05), kurt(.05) * 0.1);
-  test.inDelta(kurtosis(d3.range(10000).map(randomBernoulli(.10))), kurt(.10), kurt(.10) * 0.1);
-  test.inDelta(kurtosis(d3.range(10000).map(randomBernoulli(.15))), kurt(.15), kurt(.15) * 0.1);
-  test.inDelta(kurtosis(d3.range(10000).map(randomBernoulli(.20))), kurt(.20), kurt(.20) * 0.1);
+  test.inDelta(kurtosis(d3.range(10000).map(randomBernoulli(.05))), kurt(.05), kurt(.05) * 0.2);
+  test.inDelta(kurtosis(d3.range(10000).map(randomBernoulli(.10))), kurt(.10), kurt(.10) * 0.2);
+  test.inDelta(kurtosis(d3.range(10000).map(randomBernoulli(.15))), kurt(.15), kurt(.15) * 0.2);
+  test.inDelta(kurtosis(d3.range(50000).map(randomBernoulli(.20))), kurt(.20), kurt(.20) * 0.4);
   test.end();
 });
