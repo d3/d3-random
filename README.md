@@ -112,7 +112,7 @@ const d3 = require("d3-random"),
     seed = 42,
     random = d3.randomNormal.source(d3.randomLcg(seed))(0, 1);
 
-random(); // 1.4904793740925901
+random(); // -0.26990580687568544
 ```
 
 <a name="randomLcg" href="#randomLcg">#</a> d3.<b>randomLcg</b>(<i>[seed]</i>) · [Examples](https://observablehq.com/@fil/linear-congruential-generator)
