@@ -8,7 +8,7 @@ function deviation(n) {
 }
 
 tape("randomPareto() returns randoms with specified mean", function (test) {
-  var randomPareto = d3.randomPareto.source(d3.randomLcg(0.1));
+  var randomPareto = d3.randomPareto.source(d3.randomLcg(0.6165632948194271));
   test.equal(d3.mean(d3.range(10000).map(randomPareto(0))), Infinity);
   test.assert(d3.mean(d3.range(10000).map(randomPareto(1))) > 8);
   test.inDelta(d3.mean(d3.range(10000).map(randomPareto(3))), 1.5, .4);
@@ -19,7 +19,7 @@ tape("randomPareto() returns randoms with specified mean", function (test) {
 });
 
 tape("randomPareto() returns randoms with specified deviation", function (test) {
-  var randomPareto = d3.randomPareto.source(d3.randomLcg(0.2));
+  var randomPareto = d3.randomPareto.source(d3.randomLcg(0.5733127851951378));
   test.assert(isNaN(d3.deviation(d3.range(10000).map(randomPareto(0)))));
   test.assert(d3.deviation(d3.range(10000).map(randomPareto(1))) > 70);
   test.inDelta(d3.deviation(d3.range(10000).map(randomPareto(3))), deviation(3), .5);
@@ -29,7 +29,7 @@ tape("randomPareto() returns randoms with specified deviation", function (test) 
 });
 
 tape("randomPareto(3) returns randoms with mean of 1.5 and deviation of 0.9", function (test) {
-  var randomPareto = d3.randomPareto.source(d3.randomLcg(0.3));
+  var randomPareto = d3.randomPareto.source(d3.randomLcg(0.9341538627900958));
   test.inDelta(d3.deviation(d3.range(10000).map(randomPareto(3))), 0.9, .2);
   test.inDelta(d3.mean(d3.range(10000).map(randomPareto(3))), 1.5, .05);
   test.end();

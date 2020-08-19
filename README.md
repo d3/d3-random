@@ -109,10 +109,10 @@ Returns the same type of function for generating random numbers but where the gi
 
 ```js
 const d3 = require("d3-random");
-const seed = 0.42; // any number in [0, 1)
+const seed = 0.44871573888282423; // any number in [0, 1)
 const random = d3.randomNormal.source(d3.randomLcg(seed))(0, 1);
 
-random(); // -0.8192429857722214
+random(); // -0.6253955998897069
 ```
 
 <a name="randomLcg" href="#randomLcg">#</a> d3.<b>randomLcg</b>(<i>[seed]</i>) · [Examples](https://observablehq.com/@fil/linear-congruential-generator)

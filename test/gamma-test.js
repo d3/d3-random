@@ -6,7 +6,7 @@ var tape = require("tape"),
 require("./inDelta");
 
 tape("randomGamma(k) returns random numbers with a mean of k", function(test) {
-  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.1));
+  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.8177609532536807));
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(0.1))), 0.1, 0.01);
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(0.5))), 0.5, 0.05);
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(1))), 1, 0.05);
@@ -16,7 +16,7 @@ tape("randomGamma(k) returns random numbers with a mean of k", function(test) {
 });
 
 tape("randomGamma(k) returns random numbers with a variance of k", function(test) {
-  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.2));
+  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.6494198931625885));
   test.inDelta(d3.variance(d3.range(10000).map(randomGamma(0.1))), 0.1, 0.005);
   test.inDelta(d3.variance(d3.range(10000).map(randomGamma(0.5))), 0.5, 0.05);
   test.inDelta(d3.variance(d3.range(10000).map(randomGamma(1))), 1, 0.05);
@@ -26,7 +26,7 @@ tape("randomGamma(k) returns random numbers with a variance of k", function(test
 });
 
 tape("randomGamma(k) returns random numbers with a skewness of 2 / sqrt(k)", function(test) {
-  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.3));
+  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.02223371708142996));
   test.inDelta(skewness(d3.range(10000).map(randomGamma(0.1))), Math.sqrt(40), 1);
   test.inDelta(skewness(d3.range(10000).map(randomGamma(0.5))), Math.sqrt(8), 0.25);
   test.inDelta(skewness(d3.range(10000).map(randomGamma(1))), 2, 0.1);
@@ -36,7 +36,7 @@ tape("randomGamma(k) returns random numbers with a skewness of 2 / sqrt(k)", fun
 });
 
 tape("randomGamma(k) returns random numbers with an excess kurtosis of 6 / k", function(test) {
-  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.4));
+  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.19568718910927974));
   test.inDelta(kurtosis(d3.range(10000).map(randomGamma(0.1))), 60, 15);
   test.inDelta(kurtosis(d3.range(10000).map(randomGamma(0.5))), 12, 3);
   test.inDelta(kurtosis(d3.range(10000).map(randomGamma(1))), 6, 1.5);
@@ -46,7 +46,7 @@ tape("randomGamma(k) returns random numbers with an excess kurtosis of 6 / k", f
 });
 
 tape("randomGamma(k, theta) returns random numbers with a mean of k * theta and a variance of k * theta^2", function(test) {
-  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.5));
+  var randomGamma = d3.randomGamma.source(d3.randomLcg(0.9608725416165995));
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(1, 2))), 2, 0.05);
   test.inDelta(d3.mean(d3.range(10000).map(randomGamma(2, 4))), 8, 0.2);
   test.inDelta(d3.deviation(d3.range(10000).map(randomGamma(1, 2))), 2, 0.1);
