@@ -10,7 +10,7 @@ require("./inDelta");
 // wildly influence summary statistics.
 
 tape("randomPoisson(lambda) returns random numbers with a mean of lambda", function(test) {
-  var randomPoisson = d3.randomPoisson.source(d3.randomLcg(1));
+  var randomPoisson = d3.randomPoisson.source(d3.randomLcg(0.1));
   test.inDelta(d3.mean(d3.range(100000).map(randomPoisson(0.001))), 0.001, 0.0005);
   test.inDelta(d3.mean(d3.range(10000).map(randomPoisson(0.1))), 0.1, 0.01);
   test.inDelta(d3.mean(d3.range(10000).map(randomPoisson(0.5))), 0.5, 0.05);
@@ -22,7 +22,7 @@ tape("randomPoisson(lambda) returns random numbers with a mean of lambda", funct
 });
 
 tape("randomPoisson(lambda) returns random numbers with a variance of lambda", function(test) {
-  var randomPoisson = d3.randomPoisson.source(d3.randomLcg(2));
+  var randomPoisson = d3.randomPoisson.source(d3.randomLcg(0.2));
   test.inDelta(d3.variance(d3.range(100000).map(randomPoisson(0.001))), 0.001, 0.0005);
   test.inDelta(d3.variance(d3.range(10000).map(randomPoisson(0.1))), 0.1, 0.01);
   test.inDelta(d3.variance(d3.range(10000).map(randomPoisson(0.5))), 0.5, 0.05);
@@ -34,7 +34,7 @@ tape("randomPoisson(lambda) returns random numbers with a variance of lambda", f
 });
 
 tape("randomPoisson(lambda) returns random numbers with a skewness of 1 / sqrt(lambda)", function(test) {
-  var randomPoisson = d3.randomPoisson.source(d3.randomLcg(3));
+  var randomPoisson = d3.randomPoisson.source(d3.randomLcg(0.3));
   test.inDelta(skewness(d3.range(100000).map(randomPoisson(0.001))), 31.6, 5);
   test.inDelta(skewness(d3.range(10000).map(randomPoisson(0.1))), 3.16, 0.2);
   test.inDelta(skewness(d3.range(10000).map(randomPoisson(0.5))), 1.414, 0.1);
@@ -46,7 +46,7 @@ tape("randomPoisson(lambda) returns random numbers with a skewness of 1 / sqrt(l
 });
 
 tape("randomPoisson(lambda) returns random numbers with a kurtosis excess of 1 / lambda", function(test) {
-  var randomPoisson = d3.randomPoisson.source(d3.randomLcg(4));
+  var randomPoisson = d3.randomPoisson.source(d3.randomLcg(0.4));
   test.inDelta(kurtosis(d3.range(100000).map(randomPoisson(0.001))), 1000, 200);
   test.inDelta(kurtosis(d3.range(10000).map(randomPoisson(0.1))), 10, 2);
   test.inDelta(kurtosis(d3.range(10000).map(randomPoisson(0.5))), 2, 0.5);

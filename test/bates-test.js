@@ -6,7 +6,7 @@ var tape = require("tape"),
 require("./inDelta");
 
 tape("d3.randomBates(n) returns random numbers with a mean of one-half", function(test) {
-  var randomBates = d3.randomBates.source(d3.randomLcg(1));
+  var randomBates = d3.randomBates.source(d3.randomLcg(0.1));
   test.inDelta(d3.mean(d3.range(10000).map(randomBates(1))), 0.5, 0.05);
   test.inDelta(d3.mean(d3.range(10000).map(randomBates(10))), 0.5, 0.05);
   test.inDelta(d3.mean(d3.range(10000).map(randomBates(1.5))), 0.5, 0.05);
@@ -15,7 +15,7 @@ tape("d3.randomBates(n) returns random numbers with a mean of one-half", functio
 });
 
 tape("d3.randomBates(n) returns random numbers with a variance of 1 / (12 * n)", function(test) {
-  var randomBates = d3.randomBates.source(d3.randomLcg(2));
+  var randomBates = d3.randomBates.source(d3.randomLcg(0.2));
   test.inDelta(d3.variance(d3.range(10000).map(randomBates(1))), 1 / 12, 0.05);
   test.inDelta(d3.variance(d3.range(10000).map(randomBates(10))), 1 / 120, 0.05);
   test.inDelta(d3.variance(d3.range(10000).map(randomBates(1.5))), 1 / 18, 0.05);
@@ -24,7 +24,7 @@ tape("d3.randomBates(n) returns random numbers with a variance of 1 / (12 * n)",
 });
 
 tape("d3.randomBates(n) returns random numbers with a skewness of 0", function(test) {
-  var randomBates = d3.randomBates.source(d3.randomLcg(3));
+  var randomBates = d3.randomBates.source(d3.randomLcg(0.3));
   test.inDelta(skewness(d3.range(10000).map(randomBates(1))), 0, 0.05);
   test.inDelta(skewness(d3.range(10000).map(randomBates(10))), 0, 0.05);
   test.inDelta(skewness(d3.range(10000).map(randomBates(1.5))), 0, 0.05);
@@ -33,7 +33,7 @@ tape("d3.randomBates(n) returns random numbers with a skewness of 0", function(t
 });
 
 tape("d3.randomBates(n) returns random numbers with a kurtosis of -6 / (5 * n)", function(test) {
-  var randomBates = d3.randomBates.source(d3.randomLcg(4));
+  var randomBates = d3.randomBates.source(d3.randomLcg(0.4));
   test.inDelta(kurtosis(d3.range(10000).map(randomBates(1))), -6 / 5, 0.05);
   test.inDelta(kurtosis(d3.range(10000).map(randomBates(10))), -6 / 50, 0.1);
   test.inDelta(kurtosis(d3.range(10000).map(randomBates(1.5))), -6 / 7.5, 0.05);
@@ -42,7 +42,7 @@ tape("d3.randomBates(n) returns random numbers with a kurtosis of -6 / (5 * n)",
 });
 
 tape("d3.randomBates(0) is equivalent to d3.randomUniform()", function(test) {
-  var randomBates = d3.randomBates.source(d3.randomLcg(5));
+  var randomBates = d3.randomBates.source(d3.randomLcg(0.5));
   test.inDelta(d3.mean(d3.range(10000).map(randomBates(0))), 0.5, 0.05);
   test.inDelta(d3.variance(d3.range(10000).map(randomBates(0))), 1 / 12, 0.05);
   test.inDelta(skewness(d3.range(10000).map(randomBates(0))), 0, 0.05);
