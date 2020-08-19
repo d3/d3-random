@@ -117,6 +117,4 @@ random(); // -0.6253955998897069
 
 <a name="randomLcg" href="#randomLcg">#</a> d3.<b>randomLcg</b>(<i>[seed]</i>) · [Examples](https://observablehq.com/@fil/linear-congruential-generator)
 
-Returns a [Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator). The generator can be called repeatedly to obtain a pseudo-random sequence of values, well-distributed on the interval [0,1) and with a long period (up to 1 billion numbers).
-
-A *seed* can be specified as a number in the interval [0,1). Two generators instanced with the same seed generate the same sequence, allowing to create reproducible pseudo-random experiments. If the *seed* is not specified, it is chosen at random.
+Returns a [linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator); this function can be called repeatedly to obtain pseudorandom values well-distributed on the interval [0,1) and with a long period (up to 1 billion numbers), similar to Math.random. A *seed* can be specified as a number in the interval [0,1). Two generators instanced with the same seed generate the same sequence, allowing to create reproducible pseudo-random experiments. If the *seed* is not specified, one is chosen using Math.random.
