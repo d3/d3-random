@@ -108,9 +108,9 @@ Returns a function for generating random numbers with a [Poisson distribution](h
 Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to Math.random. For example:
 
 ```js
-const d3 = require("d3-random"),
-    seed = 0.42,
-    random = d3.randomNormal.source(d3.randomLcg(seed))(0, 1);
+const d3 = require("d3-random");
+const seed = 0.42; // any number in [0, 1)
+const random = d3.randomNormal.source(d3.randomLcg(seed))(0, 1);
 
 random(); // -0.8192429857722214
 ```
