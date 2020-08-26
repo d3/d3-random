@@ -1,10 +1,10 @@
 // https://en.wikipedia.org/wiki/Linear_congruential_generator#Parameters_in_common_use
-const a = 1664525;
-const c = 1013904223;
-const m = 4294967296; // 2^32
+const mul = 0x19660D;
+const inc = 0x3C6EF35F;
+const eps = 1/0x100000000;
 
-export default function lcg(s = Math.random()) {
-  if (!(0 <= s && s < 1)) throw new RangeError("invalid seed");
-  s = Math.floor(m * s);
-  return () => (s = (a * s + c) % m) / m;
+export default function lcg(seed = Math.random()) {
+  if (!(0 <= seed && seed < 1)) throw new RangeError("invalid seed");
+  let state = seed / eps | 0;
+  return () => (state = mul * state + inc | 0, eps * (state >>> 0));
 }
