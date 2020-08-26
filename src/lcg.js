@@ -5,6 +5,6 @@ const eps = 1/0x100000000;
 
 export default function lcg(seed = Math.random()) {
   if (!(0 <= seed && seed < 1)) throw new RangeError("invalid seed");
-  let state = seed/eps | 0;
+  let state = seed / eps | 0;
   return () => (state = mul * state + inc | 0, eps * (state >>> 0));
 }
