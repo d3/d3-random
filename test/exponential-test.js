@@ -1,12 +1,11 @@
-var tape = require("tape"),
+var tape = require("tape-await"),
     d3 = Object.assign({}, require("../"), require("d3-array"));
 
 require("./inDelta");
 
-tape("d3.randomExponential(lambda) returns random exponentially distributed numbers with a mean of 1/lambda.", function(test) {
-  var randomExponential = d3.randomExponential.source(d3.randomLcg(0.42));
-
-  var mean = 20,
+tape("d3.randomExponential(lambda) returns random exponentially distributed numbers with a mean of 1/lambda.", test => {
+  var randomExponential = d3.randomExponential.source(d3.randomLcg(0.42)),
+      mean = 20,
       lambda = 1 / mean, // average rate (e.g. 1 per 20 minutes)
       times = d3.range(10000).map(randomExponential(lambda));
 
@@ -18,6 +17,4 @@ tape("d3.randomExponential(lambda) returns random exponentially distributed numb
         expected = 1 - Math.exp(-elapsed * lambda);
     test.inDelta(within.length / times.length, expected, expected * 0.02);
   });
-
-  test.end();
 });

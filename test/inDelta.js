@@ -1,4 +1,4 @@
-var tape = require("tape");
+var tape = require("tape-await");
 
 tape.Test.prototype.inDelta = function(actual, expected, delta) {
   this._assert(expected - delta <= actual && actual <= expected + delta, {

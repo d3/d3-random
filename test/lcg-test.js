@@ -1,5 +1,5 @@
-var tape = require("tape"),
-     d3 = Object.assign({}, require("../"), require("d3-array"));
+var tape = require("tape-await"),
+    d3 = Object.assign({}, require("../"), require("d3-array"));
 
 require("./inDelta.js");
 
@@ -9,7 +9,6 @@ tape("lcg is the expected deterministic PRNG", test => {
   test.inDelta((lcg(), lcg(), lcg(), lcg()), R1, 1e-16);
   lcg = d3.randomLcg(0);
   test.inDelta((lcg(), lcg(), lcg(), lcg()), R1, 1e-16);
-  test.end();
 });
 
 tape("lcg is seeded", test => {
@@ -17,7 +16,6 @@ tape("lcg is seeded", test => {
   const R42 = 0.6760216606780887;
   const lcg = d3.randomLcg(seed);
   test.inDelta((lcg(), lcg(), lcg(), lcg()), R42, 1e-16);
-  test.end();
 });
 
 tape("lcg is well-distributed", test => {
@@ -28,7 +26,6 @@ tape("lcg is well-distributed", test => {
   test.inDelta(d3.deviation(run), Math.sqrt(1 / 12), 1e-2);
   const histogram = d3.rollup(run, v => v.length, d => Math.floor(d * 10));
   for (const h of histogram) test.inDelta(h[1], 1000, 120);
-  test.end();
 });
 
 tape("lcg with small fractional seeds is well-distributed", test => {
@@ -41,5 +38,4 @@ tape("lcg with small fractional seeds is well-distributed", test => {
   }
   test.inDelta(d3.mean(means), 0.5, 0.02);
   test.assert(d3.min(variances) > 0.75 / 12);
-  test.end();
 });
