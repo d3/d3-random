@@ -6,14 +6,23 @@ See the [d3-random collection on Observable](https://observablehq.com/collection
 
 ## Installing
 
-If you use NPM, `npm install d3-random`. Otherwise, download the [latest release](https://github.com/d3/d3-random/releases/latest). You can also load directly as a [standalone library](https://d3js.org/d3-random.v2.min.js) or as part of [D3](https://github.com/d3/d3). ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
+If you use npm, `npm install d3-random`. You can also download the [latest release on GitHub](https://github.com/d3/d3-random/releases/latest). For vanilla HTML in modern browsers, import d3-random from Skypack:
 
 ```html
-<script src="https://d3js.org/d3-random.v2.min.js"></script>
+<script type="module">
+import {randomUniform} from "https://cdn.skypack.dev/d3-random@3";
+
+const random = randomUniform(1, 10);
+</script>
+```
+
+For legacy environments, you can load d3-random’s UMD bundle from an npm-based CDN such as jsDelivr; a `d3` global is exported:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/d3-random@3"></script>
 <script>
 
-var random = d3.randomUniform(1, 10);
-
+const random = d3.randomUniform(1, 10);
 </script>
 ```
 
