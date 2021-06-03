@@ -10,9 +10,11 @@ If you use npm, `npm install d3-random`. You can also download the [latest relea
 
 ```html
 <script type="module">
+
 import {randomUniform} from "https://cdn.skypack.dev/d3-random@3";
 
 const random = randomUniform(1, 10);
+
 </script>
 ```
 
@@ -23,6 +25,7 @@ For legacy environments, you can load d3-random’s UMD bundle from an npm-based
 <script>
 
 const random = d3.randomUniform(1, 10);
+
 </script>
 ```
 
