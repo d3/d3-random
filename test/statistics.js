@@ -1,7 +1,7 @@
-import * as d3 from "d3-array";
+import {mean} from "d3-array";
 
 export function kurtosis(numbers) {
-  let mean = d3.mean(numbers),
+  let m = mean(numbers),
       sum4 = 0,
       sum2 = 0,
       v,
@@ -9,7 +9,7 @@ export function kurtosis(numbers) {
       n = numbers.length;
 
   while (++i < n) {
-    v = numbers[i] - mean;
+    v = numbers[i] - m;
     sum2 += v * v;
     sum4 += v * v * v * v;
   }
@@ -18,7 +18,7 @@ export function kurtosis(numbers) {
 }
 
 export function skewness(numbers) {
-  let mean = d3.mean(numbers),
+  let m = mean(numbers),
       sum3 = 0,
       sum2 = 0,
       v,
@@ -26,7 +26,7 @@ export function skewness(numbers) {
       n = numbers.length;
 
   while (++i < n) {
-    v = numbers[i] - mean;
+    v = numbers[i] - m;
     sum2 += v * v;
     sum3 += v * v * v;
   }
