@@ -1,20 +1,19 @@
-var tape = require("tape-await"),
-    d3 = Object.assign({}, require("../"), require("d3-array"));
+import {mean, range} from "d3-array";
+import {randomExponential, randomLcg} from "../src/index.js";
+import {assertInDelta} from "./asserts.js";
 
-require("./inDelta");
+it("randomExponential(lambda) returns random exponentially distributed numbers with a mean of 1/lambda.", () => {
+  const r = randomExponential.source(randomLcg(0.42));
+  const period = 20;
+  const lambda = 1 / period; // average rate (e.g. 1 per 20 minutes)
+  const times = range(10000).map(r(lambda));
 
-tape("d3.randomExponential(lambda) returns random exponentially distributed numbers with a mean of 1/lambda.", test => {
-  var randomExponential = d3.randomExponential.source(d3.randomLcg(0.42)),
-      mean = 20,
-      lambda = 1 / mean, // average rate (e.g. 1 per 20 minutes)
-      times = d3.range(10000).map(randomExponential(lambda));
-
-  test.inDelta(d3.mean(times), mean, mean * 0.05);
+  assertInDelta(mean(times), period, period * 0.05);
 
   // Test cumulative distribution in intervals of 10.
-  d3.range(10, 100, 10).forEach(function(elapsed) {
-    var within = times.filter(function(t) { return t <= elapsed; }),
-        expected = 1 - Math.exp(-elapsed * lambda);
-    test.inDelta(within.length / times.length, expected, expected * 0.02);
+  range(10, 100, 10).forEach(function(elapsed) {
+    const within = times.filter(t => t <= elapsed);
+    const expected = 1 - Math.exp(-elapsed * lambda);
+    assertInDelta(within.length / times.length, expected, expected * 0.02);
   });
 });

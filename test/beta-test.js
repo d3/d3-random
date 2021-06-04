@@ -1,32 +1,31 @@
-var tape = require("tape-await"),
-    d3 = Object.assign({}, require("../"), require("d3-array"));
+import {mean, range, variance} from "d3-array";
+import {randomBeta, randomLcg} from "../src/index.js";
+import {assertInDelta} from "./asserts.js";
 
-require("./inDelta");
-
-function mean(alpha, beta) {
+function dmean(alpha, beta) {
   return alpha / (alpha + beta);
 }
 
-function variance(alpha, beta) {
+function dvariance(alpha, beta) {
   return (alpha * beta) / Math.pow(alpha + beta, 2) / (alpha + beta + 1);
 }
 
-tape("randomBeta(alpha, beta) returns random numbers with a mean of alpha / (alpha + beta)", test => {
-  var randomBeta = d3.randomBeta.source(d3.randomLcg(0.8275880644751501));
-  test.inDelta(d3.mean(d3.range(10000).map(randomBeta(1, 1))), mean(1, 1), 0.05);
-  test.inDelta(d3.mean(d3.range(10000).map(randomBeta(1, 2))), mean(1, 2), 0.05);
-  test.inDelta(d3.mean(d3.range(10000).map(randomBeta(2, 1))), mean(2, 1), 0.05);
-  test.inDelta(d3.mean(d3.range(10000).map(randomBeta(3, 4))), mean(3, 4), 0.05);
-  test.inDelta(d3.mean(d3.range(10000).map(randomBeta(0.5, 0.5))), mean(0.5, 0.5), 0.05);
-  test.inDelta(d3.mean(d3.range(10000).map(randomBeta(2.7, 0.3))), mean(2.7, 0.3), 0.05);
+it("randomBeta(alpha, beta) returns random numbers with a mean of alpha / (alpha + beta)", () => {
+  const r = randomBeta.source(randomLcg(0.8275880644751501));
+  assertInDelta(mean(range(10000).map(r(1, 1))), dmean(1, 1), 0.05);
+  assertInDelta(mean(range(10000).map(r(1, 2))), dmean(1, 2), 0.05);
+  assertInDelta(mean(range(10000).map(r(2, 1))), dmean(2, 1), 0.05);
+  assertInDelta(mean(range(10000).map(r(3, 4))), dmean(3, 4), 0.05);
+  assertInDelta(mean(range(10000).map(r(0.5, 0.5))), dmean(0.5, 0.5), 0.05);
+  assertInDelta(mean(range(10000).map(r(2.7, 0.3))), dmean(2.7, 0.3), 0.05);
 });
 
-tape("randomBeta(alpha, beta) returns random numbers with a variance of (alpha * beta) / (alpha + beta)^2 / (alpha + beta + 1)", test => {
-  var randomBeta = d3.randomBeta.source(d3.randomLcg(0.8272345925494458));
-  test.inDelta(d3.variance(d3.range(10000).map(randomBeta(1, 1))), variance(1, 1), 0.05);
-  test.inDelta(d3.variance(d3.range(10000).map(randomBeta(1, 2))), variance(1, 2), 0.05);
-  test.inDelta(d3.variance(d3.range(10000).map(randomBeta(2, 1))), variance(2, 1), 0.05);
-  test.inDelta(d3.variance(d3.range(10000).map(randomBeta(3, 4))), variance(3, 4), 0.05);
-  test.inDelta(d3.variance(d3.range(10000).map(randomBeta(0.5, 0.5))), variance(0.5, 0.5), 0.05);
-  test.inDelta(d3.variance(d3.range(10000).map(randomBeta(2.7, 0.3))), variance(2.7, 0.3), 0.05);
+it("randomBeta(alpha, beta) returns random numbers with a variance of (alpha * beta) / (alpha + beta)^2 / (alpha + beta + 1)", () => {
+  const r = randomBeta.source(randomLcg(0.8272345925494458));
+  assertInDelta(variance(range(10000).map(r(1, 1))), dvariance(1, 1), 0.05);
+  assertInDelta(variance(range(10000).map(r(1, 2))), dvariance(1, 2), 0.05);
+  assertInDelta(variance(range(10000).map(r(2, 1))), dvariance(2, 1), 0.05);
+  assertInDelta(variance(range(10000).map(r(3, 4))), dvariance(3, 4), 0.05);
+  assertInDelta(variance(range(10000).map(r(0.5, 0.5))), dvariance(0.5, 0.5), 0.05);
+  assertInDelta(variance(range(10000).map(r(2.7, 0.3))), dvariance(2.7, 0.3), 0.05);
 });

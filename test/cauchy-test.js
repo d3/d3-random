@@ -1,16 +1,15 @@
-var tape = require("tape-await"),
-    d3 = Object.assign({}, require("../"), require("d3-array"));
-
-require("./inDelta");
+import {median, range} from "d3-array";
+import {randomCauchy, randomLcg} from "../src/index.js";
+import {assertInDelta} from "./asserts.js";
 
 // Since the Cauchy distribution is "pathological" in that no integral moments exist,
 // we simply test for the median, equivalent to the location parameter.
 
-tape("randomCauchy(a, b) returns random numbers with a median of a", test => {
-  var randomCauchy = d3.randomCauchy.source(d3.randomLcg(0.42));
-  test.inDelta(d3.median(d3.range(10000).map(randomCauchy())), 0, 0.05);
-  test.inDelta(d3.median(d3.range(10000).map(randomCauchy(5))), 5, 0.05);
-  test.inDelta(d3.median(d3.range(10000).map(randomCauchy(0, 4))), 0, 0.1);
-  test.inDelta(d3.median(d3.range(10000).map(randomCauchy(1, 3))), 1, 0.1);
-  test.inDelta(d3.median(d3.range(10000).map(randomCauchy(3, 1))), 3, 0.05);
+it("randomCauchy(a, b) returns random numbers with a median of a", () => {
+  const r = randomCauchy.source(randomLcg(0.42));
+  assertInDelta(median(range(10000).map(r())), 0, 0.05);
+  assertInDelta(median(range(10000).map(r(5))), 5, 0.05);
+  assertInDelta(median(range(10000).map(r(0, 4))), 0, 0.1);
+  assertInDelta(median(range(10000).map(r(1, 3))), 1, 0.1);
+  assertInDelta(median(range(10000).map(r(3, 1))), 3, 0.05);
 });
