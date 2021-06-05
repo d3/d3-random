@@ -1,6 +1,6 @@
 {
   "name": "d3-random",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Generate random numbers from various distributions.",
   "homepage": "https://d3js.org/d3-random/",
   "repository": {
