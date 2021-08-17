@@ -120,7 +120,7 @@ Returns a function for generating random numbers with a [Poisson distribution](h
 Returns the same type of function for generating random numbers but where the given random number generator *source* is used as the source of randomness instead of Math.random. The given random number generator must implement the same interface as Math.random and only return values in the range [0, 1). This is useful when a seeded random number generator is preferable to Math.random. For example:
 
 ```js
-import {randomLcg, randomNumber} from "d3-random";
+import {randomLcg, randomNormal} from "d3-random";
 
 const seed = 0.44871573888282423; // any number in [0, 1)
 const random = randomNormal.source(randomLcg(seed))(0, 1);
