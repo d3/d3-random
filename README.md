@@ -7,6 +7,6 @@ Generate random numbers from various distributions.
 ## Resources
 
 - [Documentation](https://d3js.org/d3-random)
-- [Examples](https://observablehq.com/collection/@d3/d3-random)
+- [Examples](https://observablehq.com/@d3/-/collection/d3-random)
 - [Releases](https://github.com/d3/d3-random/releases)
 - [Getting help](https://d3js.org/community)
