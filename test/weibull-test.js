@@ -1,6 +1,7 @@
-import assert from "assert";
+import assert from "node:assert";
+import {it} from "vitest";
 import {deviation, mean, range} from "d3-array";
-import {randomLcg, randomWeibull} from "../src/index.js";
+import {randomLcg, randomWeibull} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 it("randomWeibull() returns random numbers with the specified mean", () => {

@@ -1,5 +1,6 @@
+import {it} from "vitest";
 import {mean, range} from "d3-array";
-import {randomExponential, randomLcg} from "../src/index.js";
+import {randomExponential, randomLcg} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 it("randomExponential(lambda) returns random exponentially distributed numbers with a mean of 1/lambda.", () => {
