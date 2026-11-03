@@ -1,5 +1,5 @@
+import assert from "node:assert";
 import {it} from "vitest";
-import assert from "assert";
 import {mean, min, range} from "d3-array";
 import {randomLcg, randomUniform} from "../src/index.js";
 import {assertInDelta} from "./asserts.js";
