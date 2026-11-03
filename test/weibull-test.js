@@ -1,10 +1,10 @@
-import {test} from "vitest";
+import {it} from "vitest";
 import assert from "assert";
 import {deviation, mean, range} from "d3-array";
 import {randomLcg, randomWeibull} from "../src/index.js";
 import {assertInDelta} from "./asserts.js";
 
-test("randomWeibull() returns random numbers with the specified mean", () => {
+it("randomWeibull() returns random numbers with the specified mean", () => {
   const r = randomWeibull.source(randomLcg(0.28845828610535373));
   assertInDelta(mean(range(10000).map(r(9))), 0.947, 0.1);
   assertInDelta(mean(range(10000).map(r(3))), 0.893, 0.1);
@@ -17,7 +17,7 @@ test("randomWeibull() returns random numbers with the specified mean", () => {
   assertInDelta(mean(range(10000).map(r(-4, 1, 2))), 3.451, 0.2);
 });
 
-test("randomWeibull() returns random numbers with the specified deviation", () => {
+it("randomWeibull() returns random numbers with the specified deviation", () => {
   const r = randomWeibull.source(randomLcg(0.6675582430306972));
   assertInDelta(deviation(range(10000).map(r(9))), 0.126, 0.02);
   assertInDelta(deviation(range(10000).map(r(3))), 0.324, 0.06);
