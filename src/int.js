@@ -6,7 +6,7 @@ export default (function sourceRandomInt(source) {
     min = Math.floor(min);
     max = Math.floor(max) - min;
     return function() {
-      return Math.floor(source() * max + min);
+      return Math.floor(source() * max) + min;
     };
   }
 
