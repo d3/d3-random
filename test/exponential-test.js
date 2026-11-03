@@ -1,8 +1,9 @@
+import {test} from "vitest";
 import {mean, range} from "d3-array";
 import {randomExponential, randomLcg} from "../src/index.js";
 import {assertInDelta} from "./asserts.js";
 
-it("randomExponential(lambda) returns random exponentially distributed numbers with a mean of 1/lambda.", () => {
+test("randomExponential(lambda) returns random exponentially distributed numbers with a mean of 1/lambda.", () => {
   const r = randomExponential.source(randomLcg(0.42));
   const period = 20;
   const lambda = 1 / period; // average rate (e.g. 1 per 20 minutes)
