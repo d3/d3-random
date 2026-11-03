@@ -1,7 +1,7 @@
 import assert from "node:assert";
 import {it} from "vitest";
 import {mean, min, range} from "d3-array";
-import {randomLcg, randomUniform} from "../src/index.js";
+import {randomLcg, randomUniform} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 it("randomUniform() returns random numbers with a mean of 0.5", () => {

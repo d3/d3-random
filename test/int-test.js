@@ -1,7 +1,7 @@
 import assert from "node:assert";
 import {it} from "vitest";
 import {extent, mean, range} from "d3-array";
-import {randomInt, randomLcg} from "../src/index.js";
+import {randomInt, randomLcg} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 it("randomInt(max) returns random integers with a mean of (max - 1) / 2", () => {

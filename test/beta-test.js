@@ -1,6 +1,6 @@
 import {it} from "vitest";
 import {mean, range, variance} from "d3-array";
-import {randomBeta, randomLcg} from "../src/index.js";
+import {randomBeta, randomLcg} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 function dmean(alpha, beta) {

@@ -1,6 +1,6 @@
 import {it} from "vitest";
 import {mean, range, variance} from "d3-array";
-import {randomLcg, randomPoisson} from "../src/index.js";
+import {randomLcg, randomPoisson} from "d3-random";
 import {skewness, kurtosis} from "./statistics.js";
 import {assertInDelta} from "./asserts.js";
 

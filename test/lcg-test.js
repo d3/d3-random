@@ -1,7 +1,7 @@
 import assert from "node:assert";
 import {it} from "vitest";
 import {deviation, mean, min, range, rollup, variance} from "d3-array";
-import {randomLcg} from "../src/index.js";
+import {randomLcg} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 it("lcg is the expected deterministic PRNG", () => {

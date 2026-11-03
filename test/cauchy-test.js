@@ -1,6 +1,6 @@
 import {it} from "vitest";
 import {median, range} from "d3-array";
-import {randomCauchy, randomLcg} from "../src/index.js";
+import {randomCauchy, randomLcg} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 // Since the Cauchy distribution is "pathological" in that no integral moments exist,

@@ -1,6 +1,6 @@
 import {it} from "vitest";
 import {deviation, mean, range} from "d3-array";
-import {randomLcg, randomNormal} from "../src/index.js";
+import {randomLcg, randomNormal} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 it("randomNormal() returns random numbers with a mean of zero", () => {

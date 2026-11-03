@@ -1,7 +1,7 @@
 import assert from "node:assert";
 import {it} from "vitest";
 import {deviation, mean, range} from "d3-array";
-import {randomLcg, randomPareto} from "../src/index.js";
+import {randomLcg, randomPareto} from "d3-random";
 import {assertInDelta} from "./asserts.js";
 
 function ddeviation(n) {
