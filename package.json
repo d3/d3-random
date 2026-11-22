@@ -23,13 +23,13 @@
     "dist/**/*.js",
     "dist/**/*.mjs"
   ],
-  "module": "dist/d3-random.mjs",
-  "main": "dist/d3-random.mjs",
+  "module": "dist/esm/index.js",
+  "main": "dist/esm/index.js",
   "jsdelivr": "dist/d3-random.min.js",
   "unpkg": "dist/d3-random.min.js",
   "exports": {
     "umd": "./dist/d3-random.min.js",
-    "default": "./dist/d3-random.mjs"
+    "default": "./dist/esm/index.js"
   },
   "sideEffects": false,
   "devDependencies": {
