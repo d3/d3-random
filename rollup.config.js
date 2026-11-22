@@ -39,6 +39,14 @@ function config(options) {
 }
 
 export default [
+  // One file per module, so that sideEffects: false lets bundlers drop unused distributions.
+  config({
+    output: {
+      dir: "dist/esm",
+      format: "es",
+      preserveModules: true
+    }
+  }),
   config({
     output: {
       file: `dist/${meta.name}.mjs`,
